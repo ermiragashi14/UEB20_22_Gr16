@@ -20,15 +20,15 @@ h3 {
 }
 
 .footer-navbar,
-.footer-stilet,
-.footer-kontakt {
+.footer-styles,
+.footer-contact {
   flex: 1;
   margin-left: 25px;
 }
 
 .footer-navbar p,
-.footer-stilet p,
-.footer-kontakt p {
+.footer-styles p,
+.footer-contact p {
   color: bisque;
   margin: 8px 0;
 }
@@ -50,6 +50,69 @@ a:hover {
 }
 
 .aboutus h1 {
-text-align: center;
-font-size: larger;
+  text-align: center;
+  font-size: xx-large;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: relative;
+  height: 100vh; /* Adjust the height as needed */
+  overflow: hidden;
+}
+
+.image {
+  position: relative;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0); /* Adjust the background color and opacity */
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff; /* Adjust the text color */
+  padding: 10px 15px;
+  margin: 0 10px;
+  font-size: 18px; /* Adjust the font size */
+}
+
+nav a:hover{
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.motto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff; /* Adjust the text color */
+}
+
+.motto h1 {
+  font-size: 2.5em; /* Adjust the font size */
+  margin-bottom: 10px;
+}
+
+.motto p {
+  font-size: 1.2em; /* Adjust the font size */
 }
