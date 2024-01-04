@@ -1,0 +1,192 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 1em 0;
+}
+
+nav {
+    background-color: #34495e;
+    color: #ecf0f1;
+    padding: 1em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ecf0f1;
+    padding: 0.5em 1em;
+    margin: 0 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #2c3e50;
+}
+
+section {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+main {
+    flex: 1;
+}
+
+/* Main content box styles */
+main div {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+main img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+main h2 {
+    color: #2c3e50;
+}
+
+main p {
+    margin-bottom: 20px;
+}
+
+/* Box variation styles */
+main div:nth-child(odd) {
+    background-color: #f8f8f8;
+}
+
+main div:nth-child(3n) {
+    background-color: #eaeaea;
+}
+
+/* Sidebar styles */
+aside {
+    width: 25%;
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+aside h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+aside img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: auto;
+}
+
+/* Testimonials Section Styles */
+#testimonials {
+    background-color: #ecf0f1;
+    padding: 20px;
+}
+
+blockquote {
+    border-left: 4px solid #3498db;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+blockquote p {
+    font-style: italic;
+    color: #555;
+}
+
+blockquote cite {
+    display: block;
+    margin-top: 10px;
+    color: #777;
+}
+
+/* Contact Section Styles */
+#contact {
+    background-color: #3498db;
+    color: #ecf0f1;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#contact h2 {
+    color: #ecf0f1;
+    margin-bottom: 20px;
+}
+
+/* Featured Projects Section Styles */
+#projects {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #ecf0f1;
+    padding: 20px;
+}
+
+#projects img {
+    flex: 0 0 calc(50% - 20px);
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Architectural Images Section Styles */
+#architectural-images {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+#architectural-images img {
+    flex: 0 0 calc(33.33% - 20px);
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth Scroll Effect */
+html {
+    scroll-behavior: smooth;
+}
