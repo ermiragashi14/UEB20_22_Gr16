@@ -10,6 +10,40 @@
     <!-- Add your custom styles -->
     <style>
         /* Add any additional styles specific to this page */
+        /* Additional styles for the new divs */
+        main .new-div {
+            background-color: #eaeaea;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        main .new-div img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+        }
+
+        /* Styles for the draggable images */
+        #draggable-images {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            user-select: none;
+            touch-action: pan-y;
+        }
+
+        #draggable-images img {
+            flex: 0 0 auto;
+            width: 100%;
+            display: flex;
+            transition: opacity 1s ease-in-out;
+            opacity: 0; /* Initially set opacity to 0 */
+            margin-right: -100%;
+        }
     </style>
 </head>
 
@@ -32,46 +66,34 @@
 
     <section id="home">
         <main>
-            <div>
-                <img src="placeholder.jpg" alt="Architectural Image">
-                <p>Welcome to Your Architectural Firm, where creativity meets precision. We specialize in crafting
-                    architecturally stunning plans tailored to your unique vision.</p>
+            <!-- Draggable Images Section -->
+            <div id="draggable-images">
+                <img src="./pics/Projekti fotot/modern1.jpg" alt="Image 1">
+                <img src="./pics/Projekti fotot/modern2.jpg" alt="Image 2">
+                <img src="./pics/Projekti fotot/modern3.jpg" alt="Image 3">
+                
             </div>
 
-            <div>
-                <h2>Our Team</h2>
-                <p>Meet our team of highly skilled architects and designers, dedicated to bringing your dreams to life with
-                    innovative and functional designs.</p>
+            <!-- Removed the left part of the project and replaced with new divs -->
+            <div class="new-div">
+                <img src="placeholder1.jpg" alt="Image 1">
+                <p>Text for Image 1</p>
             </div>
 
-            <div>
-                <h2>What Sets Us Apart</h2>
-                <p>At Your Architectural Firm, we go beyond traditional architecture. Our approach combines artistic flair,
-                    cutting-edge technology, and sustainable practices to deliver exceptional results.</p>
+            <div class="new-div">
+                <img src="placeholder2.jpg" alt="Image 2">
+                <p>Text for Image 2</p>
             </div>
 
-            <div>
-                <h2>Services</h2>
-                <div>
-                    <h3>Custom Architectural Plans</h3>
-                    <p>Our experts work closely with you to create tailor-made architectural plans that align with your
-                        lifestyle and preferences.</p>
-                </div>
-
-                <div>
-                    <h3>Interior Design Services</h3>
-                    <p>Transform your space into a harmonious blend of aesthetics and functionality with our expert interior
-                        design solutions.</p>
-                </div>
-
-                <div>
-                    <h3>Project Management</h3>
-                    <p>From concept to completion, we handle every aspect of your project with meticulous attention to detail
-                        and efficient project management.</p>
-                </div>
+            <div class="new-div">
+                <img src="placeholder3.jpg" alt="Image 3">
+                <p>Text for Image 3</p>
             </div>
 
-            <!-- Add more services as needed -->
+            <div class="new-div">
+                <img src="placeholder4.jpg" alt="Image 4">
+                <p>Text for Image 4</p>
+            </div>
         </main>
 
         <aside>
@@ -123,24 +145,24 @@
     </footer>
 
     <script>
-        // JavaScript for image animations (example)
-        const images = document.querySelectorAll('#architectural-images img');
+        // JavaScript for automatic image switching
+        const images = document.querySelectorAll('#draggable-images img');
+        let currentIndex = 0;
 
-        images.forEach((image, index) => {
-            image.style.transition = `transform 0.5s ease-in-out ${index * 0.1}s`;
-        });
-
-        document.addEventListener('scroll', () => {
+        function switchImage() {
             images.forEach((image, index) => {
-                const distanceFromTop = image.getBoundingClientRect().top;
-
-                if (distanceFromTop < window.innerHeight - 50) {
-                    image.style.transform = 'translateY(0)';
+                if (index === currentIndex) {
+                    image.style.opacity = 1;
                 } else {
-                    image.style.transform = 'translateY(50px)';
+                    image.style.opacity = 0;
                 }
             });
-        });
+
+            currentIndex = (currentIndex + 1) % images.length;
+        }
+
+        // Call switchImage every 3 seconds (3000 milliseconds)
+        setInterval(switchImage, 3000);
     </script>
 </body>
 
