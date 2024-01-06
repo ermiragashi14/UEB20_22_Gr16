@@ -9,10 +9,20 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Add your custom styles -->
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-position: center;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            background-color: rgba(184, 169, 169, 0.743);
+        }
+
         /* Add any additional styles specific to this page */
         /* Additional styles for the new divs */
         main .new-div {
-            background-color: #eaeaea;
+            background-color: white;
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 10px;
@@ -40,20 +50,87 @@
             flex: 0 0 auto;
             width: 100%;
             display: flex;
-            transition: opacity 1s ease-in-out;
-            opacity: 0; /* Initially set opacity to 0 */
-            margin-right: -100%;
+            transition: transform 0.5s ease-in;
+            transform: translateX(1);
+        }
+
+        /* Styles for the arrows */
+        .arrow {
+            position: absolute;
+            top: 80%;
+            transform: translateY(-50%);
+            font-size: 32px;
+            cursor: pointer;
+            color: #333;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .arrow.left {
+            margin-left: 4%;
+            left: 10px;
+        }
+
+        .arrow.right {
+            margin-right: 30%;
+            right: 10px;
+        }
+
+        aside{
+            margin-left: 15px;
+            margin-bottom: 20px;
+        }
+
+        #testimonials{
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        nav {
+            font-size: small;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(red, green, rgb(72, 41, 130), alpha);
+            padding: 10px 20px; /* Adjusted space between elements */
+        }
+
+        nav ul {
+
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 10px;
+        }
+
+        nav a {
+            font-family: sans-serif;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        nav a.logo {
+            cursor: pointer;
+        }
+
+        #logo{
+            font-family: georgia;
+            font-size: 20px;
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <h1>Your Architectural Firm</h1>
-        <p>Transforming Visions into Architectural Masterpieces</p>
-    </header>
-
     <nav>
+        <a id="logo" href="#" class="logo">Shtepia juaj</a>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Us</a></li>
@@ -71,7 +148,6 @@
                 <img src="./pics/Projekti fotot/modern1.jpg" alt="Image 1">
                 <img src="./pics/Projekti fotot/modern2.jpg" alt="Image 2">
                 <img src="./pics/Projekti fotot/modern3.jpg" alt="Image 3">
-                
             </div>
 
             <!-- Removed the left part of the project and replaced with new divs -->
@@ -94,6 +170,10 @@
                 <img src="placeholder4.jpg" alt="Image 4">
                 <p>Text for Image 4</p>
             </div>
+
+            <!-- Arrows for manual navigation -->
+            <div class="arrow left" onclick="prevImage()">&#8249;</div>
+            <div class="arrow right" onclick="nextImage()">&#8250;</div>
         </main>
 
         <aside>
@@ -145,24 +225,32 @@
     </footer>
 
     <script>
-        // JavaScript for automatic image switching
+        // JavaScript for manual image switching
         const images = document.querySelectorAll('#draggable-images img');
         let currentIndex = 0;
 
-        function switchImage() {
-            images.forEach((image, index) => {
-                if (index === currentIndex) {
-                    image.style.opacity = 1;
+        function showImage(index) {
+            images.forEach((image, i) => {
+                i = i * (-0.01);
+                if (i === index) {
+                    image.style.transform = 'translateX(0)';
                 } else {
-                    image.style.opacity = 0;
+                    image.style.transform = `translateX(${(i - index) * 100}%)`;
                 }
             });
 
-            currentIndex = (currentIndex + 1) % images.length;
+            currentIndex = index;
         }
 
-        // Call switchImage every 3 seconds (3000 milliseconds)
-        setInterval(switchImage, 3000);
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
     </script>
 </body>
 
