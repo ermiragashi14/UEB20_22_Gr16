@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="styles.css">
-    <!-- Add your custom styles -->
     <style>
         body {
             margin: 0;
@@ -18,8 +17,7 @@
             background-color: rgba(184, 169, 169, 0.743);
         }
 
-        /* Add any additional styles specific to this page */
-        /* Additional styles for the new divs */
+
         main .new-div {
             background-color: white;
             padding: 20px;
@@ -36,9 +34,7 @@
             margin-bottom: 10px;
         }
 
-        /* Styles for the draggable images */
         #draggable-images {
-
             display: flex;
             overflow: hidden;
             position: relative;
@@ -53,11 +49,11 @@
             display: flex;
             transition: transform 0.5s ease-in;
             transform: translateX(1);
-            max-height: 300px; /* Set your desired maximum height */
-            object-fit: cover; /* Maintain aspect ratio and cover the container */
+            max-height: 300px; 
+            object-fit: cover; 
         }
 
-        .carousel-item active{
+        .carousel-item active {
             padding-bottom: 100px;
         }
 
@@ -66,7 +62,6 @@
             max-height: 400px;
         }
 
-        /* Styles for the arrows */
         .arrow {
             position: absolute;
             top: 120%;
@@ -144,20 +139,19 @@
         }
 
         .thenje {
-            font-style: oblique;
-            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-family: 'FontAwesome', sans-serif;
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 2.5em;
-            text-align: center;
-            color: #fff;
-            background: linear-gradient(45deg, #e74c3c, #3498db);
+            bottom: 7%;
+            right: -1%;
+            font-size: 4em;
+            text-align: left;
+            color: #ffffff;
+            background: linear-gradient(45deg, #d9ff00, #6d3434fd);
             background-clip: text;
             -webkit-background-clip: text;
             padding: 10px 20px;
-            animation: revealText 2s ease-in-out forwards, animateText 3s infinite;
+            animation: revealText 2s ease-in-out forwards, animateText 4s infinite;
             opacity: 0;
         }
 
@@ -173,12 +167,13 @@
 
         @keyframes animateText {
             0%, 100% {
-                color: #fff;
-                text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+                color: #ffffff;
+                text-shadow: 0 0 100px rgba(212, 73, 73, 0.9);
+                text-overflow: ellipsis;
             }
             50% {
-                color: #3498db;
-                text-shadow: 0 0 20px rgba(52, 152, 219, 0.8);
+                color: #06b67e;
+                text-shadow: 0 0 100px rgb(0, 0, 0);
             }
         }
     </style>
@@ -188,7 +183,7 @@
 
     <div class="vlera">
         <nav>
-            <a class="logo" href="#" >Shtepia juaj</a>
+            <a class="logo" href="#">Shtepia juaj</a>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Us</a></li>
@@ -198,7 +193,7 @@
                 <li><a href="#contact">Contact Us</a></li>
             </ul>
         </nav>
-        <h1 class="thenje animate__animated animate__fadeInUp" style="margin: 120px 0px 0px 50px;">A new way of building</h1>
+        <h1 class="thenje animate__animated animate__fadeInUp" style="margin: 50px 0px 0px 50px;">A new way <br>of building</h1>
     </div>
 
     <section id="home">
@@ -225,7 +220,6 @@
                 </a>
             </div>
 
-            <!-- Removed the left part of the project and replaced with new divs -->
             <div class="new-div">
                 <img src="placeholder1.jpg" alt="Image 1">
                 <p>Text for Image 1</p>
@@ -266,7 +260,6 @@
             <div class="col-md-6">
                 <img src="inspiration2.jpg" alt="Inspiration 2" class="img-fluid">
             </div>
-            <!-- Add more inspirational images as needed -->
         </div>
     </section>
 
@@ -287,7 +280,6 @@
                     <cite>- Jane Smith, Happy Client</cite>
                 </blockquote>
             </div>
-            <!-- Add more testimonials as needed -->
         </div>
     </section>
 
@@ -295,19 +287,16 @@
         <h2>Contact Us</h2>
         <p>Ready to embark on your architectural journey? Contact us today to discuss your project and turn your vision
             into reality.</p>
-        <!-- Add a contact form or contact information here -->
     </section>
 
     <footer>
         <p>&copy; 2024 Your Architectural Firm | All Rights Reserved</p>
     </footer>
 
-    <!-- Bootstrap JavaScript dependencies -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
-        // JavaScript for manual image switching
         const images = document.querySelectorAll('#draggable-images img');
         let currentIndex = 0;
 
