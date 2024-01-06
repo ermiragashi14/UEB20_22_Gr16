@@ -6,14 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Architectural Firm</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="styles.css">
     <!-- Add your custom styles -->
     <style>
         body {
             margin: 0;
             padding: 0;
-            height: 100vh;
-            background-position: center;
             font-family: 'Arial', sans-serif;
             color: #fff;
             background-color: rgba(184, 169, 169, 0.743);
@@ -67,16 +66,15 @@
             max-height: 400px;
         }
 
-
         /* Styles for the arrows */
         .arrow {
             position: absolute;
-            top: 60%;
+            top: 120%;
             transform: translateY(-50%);
             font-size: 35px;
             cursor: pointer;
             color: white;
-            background-color: rgba(0, 0, 0, 0);
+            background-color: rgba(226, 213, 213, 0.5);
             padding: 10px;
             border-radius: 50%;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -102,14 +100,19 @@
             border-radius: 10px;
         }
 
-        /* Updated styles for the navbar */
         nav {
             font-size: small;
-            background-color: #563d7c; /* Bootstrap background color */
+            background-color: rgba(0, 0, 0, 0); 
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
         }
 
         nav a.logo {
-            color: #fff; /* Bootstrap text color */
+            color: #fff;
+            text-decoration: none;
+            font-size: 25px;
         }
 
         nav ul {
@@ -117,7 +120,7 @@
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: flex-end; /* Adjusted space between elements */
+            justify-content: flex-end;
         }
 
         nav ul li {
@@ -130,32 +133,77 @@
             font-weight: bold;
             font-size: 15px;
         }
+
+        .vlera {
+            width: 100%;
+            height: 500px;
+            background-image: url('./pics/Projekti fotot/gigi.gif');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .thenje {
+            font-style: oblique;
+            font-family: 'Playfair Display', serif;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5em;
+            text-align: center;
+            color: #fff;
+            background: linear-gradient(45deg, #e74c3c, #3498db);
+            background-clip: text;
+            -webkit-background-clip: text;
+            padding: 10px 20px;
+            animation: revealText 2s ease-in-out forwards, animateText 3s infinite;
+            opacity: 0;
+        }
+
+        @keyframes revealText {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 100%;
+                opacity: 1;
+            }
+        }
+
+        @keyframes animateText {
+            0%, 100% {
+                color: #fff;
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            }
+            50% {
+                color: #3498db;
+                text-shadow: 0 0 20px rgba(52, 152, 219, 0.8);
+            }
+        }
     </style>
 </head>
 
 <body>
-    <!-- Bootstrap navbar component -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand logo" href="#">Shtepia juaj</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+
+    <div class="vlera">
+        <nav>
+            <a class="logo" href="#" >Shtepia juaj</a>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact Us</a></li>
             </ul>
-        </div>
-    </nav>
+        </nav>
+        <h1 class="thenje animate__animated animate__fadeInUp" style="margin: 120px 0px 0px 50px;">A new way of building</h1>
+    </div>
 
     <section id="home">
         <main>
-            <!-- Draggable Images Section -->
+            
             <div id="draggable-images" class="carousel slide" data-ride="carousel">
                     <div class="carousel-item active">
                         <img id="image1" src="./pics/Projekti fotot/modern1.jpg" class="d-block w-100" alt="Image 1">
@@ -166,14 +214,15 @@
                     <div class="carousel-item">
                         <img id="image1" src="./pics/Projekti fotot/modern3.jpg" class="d-block w-100" alt="Image 3">
                     </div>
-                <!--<a class="carousel-control-prev" href="#draggable-images" role="button" data-slide="prev">
+                    <!-- Arrows for manual navigation -->
+                <a class="carousel-control-prev" href="#draggable-images" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
                 <a class="carousel-control-next" href="#draggable-images" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
-                </a>-->
+                </a>
             </div>
 
             <!-- Removed the left part of the project and replaced with new divs -->
@@ -197,9 +246,6 @@
                 <p>Text for Image 4</p>
             </div>
 
-            <!-- Arrows for manual navigation -->
-            <a class="arrow left" href="#draggable-images" role="button" data-slide="prev">&#8249;</a>
-            <a class="arrow right" href="#draggable-images" role="button" data-slide="next">&#8250;</a>
         </main>
 
         <aside>
