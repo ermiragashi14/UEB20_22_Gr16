@@ -5,25 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Company</title>
     <style>
-        body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px;
-}
+     body {
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        background-color: #eceff0;
+        margin: 0;
+        padding: 20px;
+        color:rgb(0, 0, 0);
+        font-weight: 500;
+    }
 
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
 
-.form-section {
-    display: none;
-}
+    .container {
+        max-width: 600px;
+        background-color: #a7a6a8;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        align-items: center;
+    }
+
+    .form-section {
+        display: none;
+        width: 100%;
+        border: 1px;
+        border-radius: 4px;
+    }
+
+    @keyframes moveText {
+        0% {
+            transform:rotate(10deg);
+        }
+        100% {
+            transform:rotate(0deg);
+        }
+        }
+        
+    .moving-text {
+        animation: moveText 1s ease-in-out; 
+    }
+
 
     </style>
 </head>
