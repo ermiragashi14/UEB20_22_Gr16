@@ -95,13 +95,34 @@
     label:hover{
         color:rgba(39, 63, 117, 0.6);
     }
+    header {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            
+        }
 
+    header a {
+        text-decoration: none;
+            color: rgba(14, 40, 96, 0.6); 
+            cursor: pointer;
+            font-size: 16px;
+    }    
+
+    header a:hover{
+        color: rgb(5, 51, 100);
+    }
 
     </style>
 </head>
 
+<header>
+    <a href="#" onclick="goBack()">Back</a>
+</header>
 <body>
+    
     <div class="container">
+        
         <h1 class="moving-text">Let's Talk ?</h1>
         <hr>
 
@@ -116,40 +137,36 @@
             </label>
             <label>
                 <input type="radio" name="contactOption" value="conversationOption">
-                Conversation
+                Send an Email
             </label>
 
             <div class="form-section" id="projectOption">
-                <input type="text" name="name" placeholder="Name*:" required>
-                <input type="tel" name="phone" placeholder="Phone*: (044)-(111)-(111)" required>
-                <input type="email" name="email" placeholder="Email*:" value="@gmail.com" required>
+                <input type="text" name="name" placeholder="Name*:" >
+                <input type="tel" name="phone" placeholder="Phone*: (044)-(111)-(111)" >
+                <input type="email" name="email" placeholder="Email*:">
                 <input type="text" name="comment" placeholder="Comment (Optional)">
                 <button type="submit">Submit</button>
             </div>
 
             <div class="form-section" id="teamOption">
-                <input type="text" name="name" placeholder="Name*:" required>
-                <input type="tel" name="phone" placeholder="Phone*: (044)-(111)-(111)" required>
-                <input type="email" name="email" placeholder="Email*:" value="@gmail.com" required>
-                <input type="text" name="profession" placeholder="Profession*:" required>
+                <input type="text" name="name" placeholder="Name*:" >
+                <input type="tel" name="phone" placeholder="Phone*: (044)-(111)-(111)" >
+                <input type="email" name="email" placeholder="Email*:" >
+                <input type="text" name="profession" placeholder="Profession*:" >
                 <input type="text" name="comment" placeholder="Comment (Optional)">
-                <input type="file" name="file-upload" required>
+                <input type="file" name="file-upload" >
                 <button type="submit">Submit</button>
             </div>
 
             <div class="form-section" id="conversationOption">
-                <input type="text" name="name" placeholder="Name*:" required>
-                <input type="tel" name="phone" placeholder="Phone*: (044)-(111)-(111)" required>
-                <input type="email" name="email" placeholder="Email*:" value="@gmail.com" required>
-                <select name="activity">
-                    <option value="" disabled selected>Select an activity</option>
-                    <option value="Architecture">Architecture</option>
-                    <option value="Design">Design</option>
-                    <option value="Interior-Design">Interior-Design</option>
-                    <option value="Other">Other</option>
-                </select>
-                <input type="text" name="comment" placeholder="Comment (Optional)">
-                <button type="submit">Submit</button>
+                <form id="emailForm">
+                    
+                    <input type="text" id="name" name="name" placeholder="Name and Surname" required>
+                    <input type="email" id="email" name="email" placeholder="Email Address" required>
+                    <textarea id="message" name="message" placeholder="Message.." required></textarea>
+        
+                    <button type="button" onclick="sendEmail()">Dërgo Email</button>
+                </form>
             </div>
         </form>
     </div>
@@ -163,7 +180,7 @@
 
             contactForm.addEventListener('submit', function (event) {
                 event.preventDefault();
-                // Handle form submission logic here based on selected option
+                
                 const selectedOption = document.querySelector('input[name="contactOption"]:checked').value;
 
                 switch (selectedOption) {
@@ -177,14 +194,14 @@
                         break;
                     case 'conversationOption':
                        
-                        console.log('Conversation form submitted');
+                        console.log('Send an eamil form submitted');
                         break;
                     default:
                         console.error('Invalid option selected');
                 }
             });
 
-            // Show the corresponding form section based on the selected radio button
+        
             document.querySelectorAll('input[name="contactOption"]').forEach(function (radio) {
                 radio.addEventListener('change', function () {
                     projectOption.style.display = 'none';
@@ -209,6 +226,23 @@
                 });
             });
         });
+
+        function sendEmail() {
+  
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var message = document.getElementById('message').value;
+
+    var subject = 'Mesazh nga ' + name;
+
+    var body = 'Emri: ' + name + '\nEmail: ' + email + '\n\nMesazhi:\n' + message;
+
+    window.open('mailto:website.architectural@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body));
+}
+
+function goBack() {
+        window.history.back();
+    }
     </script>
 </body>
 </html>
