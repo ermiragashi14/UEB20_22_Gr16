@@ -14,7 +14,7 @@
             padding: 0;
             font-family: 'Arial', sans-serif;
             color: #fff;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(225, 232, 248, 0.6);
         }
 
         main .new-div {
@@ -138,12 +138,14 @@
 
 
         .vlera {
-            width: 100%;
+
             height: 500px;
-            background-image: url('./pics/Projekti fotot/gigi.gif');
+            background-image: url("https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
             background-size: cover;
             background-position: center;
             position: relative;
+            border-radius: 30px;
+            margin: 1% 1% 1% 1%;
         }
 
         .thenje {
@@ -266,11 +268,11 @@
 
         .logo {
             font-family: 'Montserrat';
-            font-size: 35px; /* Adjust the font size */
-            color: #3498db; /* Set the desired text color */
+            font-size: 35px; 
+            color: #3498db; 
             text-decoration: none;
             font-weight: bold;
-            letter-spacing: 2px; /* Adjust letter spacing for style */
+            letter-spacing: 2px; 
         }
 
         #servicesOverview body {
@@ -281,6 +283,8 @@
             color: #c8d300;
             height: 100vh;
             border-radius: 15px;
+            margin: 0 10% 0 10%;
+            background-image: url("pics/Projekti\ fotot/gigi.gif");
         }
 
         #servicesOverview section {
@@ -293,10 +297,11 @@
             color: #fff;
             height: 80%;
             transition: background-color 0.3s;
+            border-radius: 30px;
         }
 
         #servicesOverview section:hover {
-            background-color: #ca8b8b;
+            background-color: #f3e9e9;
         }
 
         #servicesOverview div#sherbimet {
@@ -311,7 +316,10 @@
             text-align: center;
             border: 10%;
             padding: auto;
-            border-bottom-style: double;
+        }
+
+        #sherbimet h1{
+            margin-bottom: 10px;
         }
 
         #sherbimet :hover{
@@ -338,25 +346,25 @@
             transition: background-color 0.3s;
             border-radius: 15px;
             display: flex;
-            flex-direction: column; /* Added this line */
+            flex-direction: column; 
         }
 
         #servicesOverview div > div:hover {
-            background-color: #05484c;
+            background-color: rgba(31, 29, 110, 0.5);
         }
 
         #servicesOverview h3 a {
             text-decoration: none;
-            color: #563ce7;
+            color: #ffffff;
             font-size: 1.5em;
             margin: 0 10px;
             padding: 10px;
-            border-radius: 5px;
-            background-color: #ecf0f1d1;
+            background-color: rgba(14, 40, 96, 0.6);
             transition: background-color 0.3s, color 0.3s;
-            display: block;
+            display: flex;
             margin-bottom: 10px;
-            margin-top: 5%;
+            border-radius: 25px;
+            text-align: center;
         }
 
         #servicesOverview h3 a:hover {
@@ -372,6 +380,13 @@
             font-size: 1.2em;
             line-height: 1.6;
             margin-top: 10px;
+        }
+
+        #perKlient{
+            border-radius: 40px; 
+            background-color: transparent; 
+            margin: 2% 5% 2% 5%;
+            background-image: url("pics/Projekti\ fotot/gigi.gif");
         }
 
         @keyframes fadeInUp {
@@ -394,6 +409,71 @@
             }
         }
 
+        #aside {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        #aside h2 {
+            font-size: 24px;
+            color: #3498db;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #aside .event {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 15px;
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        #aside .event:hover {
+            transform: translateY(-5px);
+        }
+
+        #aside h3 {
+            font-size: 18px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        #aside .date,
+        #aside .location {
+            color: #7f8c8d;
+            margin-bottom: 5px;
+        }
+
+        #aside .event-link {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        #aside .event-link:hover {
+            background-color: #2980b9;
+            color: #fff;
+        }
+
+        #aside a {
+            text-decoration: none;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        #aside a:hover {
+            text-decoration: underline;
+        }
+
     </style>
 </head>
 
@@ -406,33 +486,33 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#events">Events</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact Us</a></li>
             </ul>
         </nav>
-        <h1 class="thenje animate__animated animate__fadeInUp" style="margin: 50px 0px 0px 50px;">A new way <br>of building</h1>
+        <h1 class="thenje animate__animated animate__fadeInUp" style="margin: 50px 0px 0px 50px;">A new way <br>of building...</h1>
     </div>
 
-    <div style="border-radius: 15px; background-color: #171313; margin: 1.5%;">
+    <div id="perKlient">
 
         <div>
-            <h1 id="sherbimet">Services we provide</h1>
+            <h1 id="sherbimet" style=" margin-top: 1.5%;">Services we provide</h1>
         </div>
 
-        <section id="servicesOverview">
+        <section id="servicesOverview" style="border-radius: 30px;">
 
             <div>
                 <div>
-                    <h3><a href="services.html">For architects</a></h3>
-                    <p style="color: #5977e3a3;">
-                        Are you an architect seeking exciting opportunities to contribute your skills and creativity? Our firm offers both part-time and full-time positions, providing a dynamic environment where innovation flourishes. Join us in shaping the future of architecture through collaborative projects and cutting-edge designs.
+                    <h3><a href="services.html" >For architects</a></h3>
+                    <p style="color: rgb(255, 255, 255);;">
+                        Are you an architect seeking exciting opportunities to contribute your skills and creativity? Our firm offers both part-time and full-time positions, providing a dynamic environment where innovation flourishes. Join us in shaping the future of architecture through collaborative projects and cutting-edge designs. <br>
                     </p>
                 </div>
 
                 <div>
                     <h3><a href="services.html">For clients</a></h3>
-                    <p style="color: #5977e3a3;">
+                    <p style="color: rgb(255, 255, 255);">
                         For clients envisioning their dream homes, we provide comprehensive house planning services. Our experienced team collaborates with you to understand your vision, translating it into detailed house plans that capture your unique style and preferences. Let us turn your dream home into a reality that exceeds your expectations. 
                         
                     </p>
@@ -488,14 +568,37 @@
             </div>
 
         </main>
-
-        <aside>
-            <h2>Featured Projects</h2>
-            <img src="project1.jpg" alt="Project 1">
-            <p>Description of Project 1.</p>
-            <img src="project2.jpg" alt="Project 2">
-            <p>Description of Project 2.</p>
-        </aside>
+            <aside id="aside">
+                <h2>Upcoming Events</h2>
+                <div class="event">
+                    <h3><a href="events.html#architectural-workshop">Architectural Workshop</a></h3>
+                    <p class="date">June 15, 2024</p>
+                    <p class="location">Prishtine, Kosovo</p>
+                    <a href="events.html#architectural-workshop" class="event-link">Learn More</a>
+                </div>
+    
+                <div class="event">
+                    <h3><a href="events.html#design-excellence-seminar">Design Excellence Seminar</a></h3>
+                    <p class="date">July 5, 2024</p>
+                    <p class="location">Virtual Event</p>
+                    <a href="events.html#design-excellence-seminar" class="event-link">Register Now</a>
+                </div>
+    
+                <div class="event">
+                    <h3><a href="events.html#sustainable-architecture-forum">Sustainable Architecture Forum</a></h3>
+                    <p class="date">August 20, 2024</p>
+                    <p class="location">Skopje, North Macedonia</p>
+                    <a href="events.html#sustainable-architecture-forum" class="event-link">Details Here</a>
+                </div>
+    
+                <div class="event">
+                    <h3><a href="events.html#urban-planning-conference">Urban Planning Conference</a></h3>
+                    <p class="date">September 10, 2024</p>
+                    <p class="location">Tirana, Albania</p>
+                    <a href="events.html#urban-planning-conference" class="event-link">Join Us</a>
+                </div>
+            </aside>
+        
     </section>
 
     <section id="testimonials" class="py-5">
