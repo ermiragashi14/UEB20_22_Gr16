@@ -336,7 +336,7 @@ nav a:hover {
     white-space: nowrap;
     overflow: hidden;
     border-right: 2px solid #fff; /* Typing cursor */
-    animation: revealText 4s steps(40) forwards, animateText 15s forwards;
+    animation: revealText 4s steps(700) forwards, animateText 355s forwards;
     opacity: 0;
 }
 
