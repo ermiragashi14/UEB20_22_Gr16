@@ -176,7 +176,7 @@ nav a:hover {
 
 /* Navbar styles */
 .navbari {
-    height: 60vh; /* Adjust the percentage based on your preference */
+    height: 73vh; /* Adjust the percentage based on your preference */
     background-image: url("https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
     background-size: cover;
     background-position: center;
@@ -248,7 +248,7 @@ nav a:hover {
     position: absolute;
     bottom: 20px;
     left: 20px;
-    font-size: 2.5em; /* Adjusted font size */
+    font-size: 4.0em; /* Adjusted font size */
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     opacity: 1;
@@ -326,25 +326,24 @@ nav a:hover {
     z-index: 0;
 }
 .thenje {
-    font-style: italic;
-    font-family: 'FontAwesome', sans-serif;
+    font-family: 'Poppins', sans-serif;
     position: absolute;
     bottom: 7%;
-    right: -1%;
+    right: 2%;
     font-size: 4em;
     text-align: left;
     color: #ffffff;
-    background: linear-gradient(45deg, transparent, transparent);
-    background-clip: text;
-    -webkit-background-clip: text;
-    padding: 10px 20px;
-    animation: revealText 3s ease-in-out forwards, animateText 5s infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #fff; /* Typing cursor */
+    animation: revealText 4s steps(40) forwards, animateText 15s forwards;
     opacity: 0;
 }
 
 @keyframes revealText {
     0% {
         width: 0;
+        opacity: 0;
     }
     100% {
         width: 100%;
@@ -354,15 +353,13 @@ nav a:hover {
 
 @keyframes animateText {
     0%, 100% {
-        color: #ffffff;
-        text-shadow: 0 0 100px rgba(212, 73, 73, 0.9);
-        text-overflow: ellipsis;
+        border-right: none; /* Remove cursor at the end */
     }
     50% {
-        color: transparent;
-        text-shadow: 0 0 100px rgb(0, 0, 0);
+        border-right: 2px solid #fff; /* Add cursor in the middle */
     }
 }
+
 
 footer {
     background-color: #2c3e50;
