@@ -129,7 +129,7 @@
         <form id="contactForm" action="#">
             <label>
                 <input type="radio" name="contactOption" value="projectOption">
-                Discuss the project
+                Discuss a project
             </label>
             <label>
                 <input type="radio" name="contactOption" value="teamOption">
@@ -141,18 +141,18 @@
             </label>
 
             <div class="form-section" id="projectOption">
-                <input type="text" name="name" placeholder="Name*:" >
-                <input type="tel" name="phone" placeholder="Phone*: (044)-(111)-(111)" >
-                <input type="email" name="email" placeholder="Email*:">
+                <input type="text" name="name" placeholder="Name:" >
+                <input type="tel" name="phone" placeholder="Phone: (044)-(111)-(111)" >
+                <input type="email" name="email" placeholder="Email:">
                 <input type="text" name="comment" placeholder="Comment (Optional)">
                 <button type="submit">Submit</button>
             </div>
 
             <div class="form-section" id="teamOption">
-                <input type="text" name="name" placeholder="Name*:" >
-                <input type="tel" name="phone" placeholder="Phone*: (044)-(111)-(111)" >
-                <input type="email" name="email" placeholder="Email*:" >
-                <input type="text" name="profession" placeholder="Profession*:" >
+                <input type="text" name="name" placeholder="Name:" >
+                <input type="tel" name="phone" placeholder="Phone: (044)-(111)-(111)" >
+                <input type="email" name="email" placeholder="Email:" >
+                <input type="text" name="profession" placeholder="Profession:" >
                 <input type="text" name="comment" placeholder="Comment (Optional)">
                 <input type="file" name="file-upload" >
                 <button type="submit">Submit</button>
@@ -161,11 +161,11 @@
             <div class="form-section" id="conversationOption">
                 <form id="emailForm">
                     
-                    <input type="text" id="name" name="name" placeholder="Name and Surname" required>
-                    <input type="email" id="email" name="email" placeholder="Email Address" required>
-                    <textarea id="message" name="message" placeholder="Message.." required></textarea>
+                    <input type="text" id="name" name="name" placeholder="Name and Surname" >
+                    <input type="email" id="email" name="email" placeholder="Email Address" >
+                    <textarea id="message" name="message" placeholder="Message.." ></textarea>
         
-                    <button type="button" onclick="sendEmail()">Dërgo Email</button>
+                    <button type="button" onclick="sendEmail()">Send an Email</button>
                 </form>
             </div>
         </form>
@@ -194,7 +194,7 @@
                         break;
                     case 'conversationOption':
                        
-                        console.log('Send an eamil form submitted');
+                        console.log('Send an email form submitted');
                         break;
                     default:
                         console.error('Invalid option selected');
@@ -233,9 +233,9 @@
     var email = document.getElementById('email').value;
     var message = document.getElementById('message').value;
 
-    var subject = 'Mesazh nga ' + name;
+    var subject = 'Message from: ' + name;
 
-    var body = 'Emri: ' + name + '\nEmail: ' + email + '\n\nMesazhi:\n' + message;
+    var body = 'Name and Surname: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message;
 
     window.open('mailto:website.architectural@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body));
 }
