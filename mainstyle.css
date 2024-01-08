@@ -51,10 +51,9 @@ main .new-div img {
 .new-div {
     flex: 1; /* Add this to make it take available space */
     margin-top: 1%;
-    width: 30%;
     background-color: #333;
     padding: 20px;
-    width: 1400px;
+    width: 145vh;
 }
 
 .carousel-item active {
