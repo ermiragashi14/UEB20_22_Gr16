@@ -4,16 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project Gallery</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./mainstyle.css">
   <style>
+
+.navbari {
+    width:100%;
+}
     body {
       font-family: Arial, sans-serif;
-      background-color: #ece4e1;
+      background-color: #ffffff;
       margin: 0;
       padding: 0;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
+      color:rgb(32, 32, 32);
     }
 
     h1 {
@@ -25,6 +32,7 @@
       max-width: 800px;
       text-align: center;
       margin-bottom: 30px;
+      color:rgba(50, 48, 48, 0.778);
     }
 
     table {
@@ -67,7 +75,7 @@
 
     .details-btn {
 
-      background-color:rgba(85, 108, 158, 0.6);
+      background-color:rgba(109, 109, 110, 0.6);
       color: white;
       padding: 8px 16px;
       border: none;
@@ -78,7 +86,7 @@
     }
 
     .details-btn:hover {
-      background-color: #45a049;
+      background-color: #6173cb;
     }
 
     .modal {
@@ -113,29 +121,73 @@
       right: 20px;
       cursor: pointer;
     }
+    .table1 {
+      width: 47%;
+      border-collapse: collapse;
+      margin: 20px auto;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+     
+    }
+    .image-cell{
+      padding: 4px;
+      transition: transform 0.3s ease-in-out;
+    }
+    .image-cell img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    display: block; 
+    margin: 0 auto; 
+   
+  }
 
-    
+  .image-cell:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.893);
+    }
+
+    h2{
+      margin-top: 70px;
+    }
   </style>
 </head>
 <body>
+
+  <div class="navbari">
+        <nav>
+            <img src="./pics/Projekti fotot/logore.png" class="logo" alt="">
+            <ul>
+                <li><a href="./kodi.html">Home</a></li>
+                <li><a href="./team.html">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="./contact.html">Contact Us</a></li>
+            </ul>
+            
+        </nav>
+        <h1 class="thenje animate__animated animate__fadeInUp" style="margin: 50px 0px 0px 50px;">Our amazing <br>team of proffesionals</h1>
+
+    </div>
   <h1>PROJECTS</h1>
-  <p>Our projects are a testament to the studio’s commitment to cultural exploration, innovation, and the power of nature. Each project is a unique reflection of the client’s needs and MAKHNO’s vision, resulting in spaces that are both stunning and meaningful.</p>
+  <p>Our projects are a testament to the studio’s commitment to cultural exploration, innovation, and the power of nature. Each project is a unique reflection of the client’s needs and our vision, resulting in spaces that are both stunning and meaningful.</p>
   
   <table>
     <tr>
       <td class="project-card">
         <img src="https://makhnostudio.com/wp-content/uploads/2023/12/8-mallorca-2-r2.webp" alt="Project 1">
         <div class="project-card-content">
-          <div class="project-name">Project 1</div>
-          <button class="details-btn">Click for Details</button>
+          <div class="project-name">SATORI HOUSE</div>
+          <a href="#SATORI_HOUSE"><button class="details-btn">Details</button></a>
         </div>
       </td>
 
       <td class="project-card">
         <img src="https://makhnostudio.com/wp-content/uploads/2023/03/Plan-B3.webp" alt="Project 2">
         <div class="project-card-content">
-          <div class="project-name">Project 2</div>
-          <button class="details-btn">Click for Details</button>
+          <div class="project-name">UNDERGROUND HOUSE</div>
+          <a href="#UNDERGROUND_HOUSE"><button class="details-btn">Details</button></a>
         </div>
       </td>
     </tr>
@@ -143,16 +195,16 @@
       <td class="project-card">
         <img src="https://images.adsttc.com/media/images/659b/ebd1/9936/3f17/84c3/bb39/slideshow/casa-fonte-das-perdizes-goncalobonniz-arquitectos_1.jpg?1704717281" alt="Project 3">
         <div class="project-card-content">
-          <div class="project-name">Project 3</div>
-          <button class="details-btn">Click for Details</button>
+          <div class="project-name">SUSANNA HOUSE</div>
+          <a href="#SUSANNA_HOUSE"><button class="details-btn">Details</button></a>
         </div>
       </td>
 
       <td class="project-card">
-        <img src="https://images.adsttc.com/media/images/658c/7566/9936/3f23/8b10/a16e/slideshow/pb-house-d-compose-architect_10.jpg?1703703926" alt="Project 4">
+        <img src="https://images.adsttc.com/media/images/636e/3e77/2179/832b/9b8e/4239/slideshow/no-6-sydney-street-apartments-wood-marsh_1.jpg?1668169393" alt="Project 4">
         <div class="project-card-content">
-          <div class="project-name">Project 4</div>
-          <button class="details-btn">Click for Details</button>
+          <div class="project-name">MARSH LANDSCAPING</div>
+          <a href="#MARSH_LANDSCAPING"><button class="details-btn">Details</button></a>
         </div>
       </td>
     </tr>
@@ -160,23 +212,270 @@
       <td class="project-card">
         <img src="https://images.adsttc.com/media/images/6579/e1d5/23c8/ee75/d4c2/75fc/slideshow/masarycka-building-zaha-hadid-architects_6.jpg?1702486518" alt="Project 5">
         <div class="project-card-content">
-          <div class="project-name">Project 5</div>
-          <button class="details-btn">Click for Details</button>
+          <div class="project-name">MASARYCKA</div>
+          <a href="#MASARYCKA"><button class="details-btn">Details</button></a>
         </div>
       </td>
 
       <td class="project-card">
         <img src="https://images.adsttc.com/media/images/6581/acc5/5ba1/5701/7c02/e680/slideshow/isla-brown-corinthia-elastic-architects_5.jpg?1702997218" alt="Project 6">
         <div class="project-card-content">
-          <div class="project-name">Project 6</div>
-          <button class="details-btn">Click for Details</button>
+          <div class="project-name">ISLA BROWN CORINTHIA</div>
+          <a href="#ISLA_BROWN_CORINTHIA"><button class="details-btn">Details</button></a>
         </div>
       </td>
     </tr>
   </table>
+<br>
 
-  <script>
+  <h2>DETAILED INFORMATION</h2>
+
+  <table cellspacing="10" cellpadding="10" class="table1" id="SATORI_HOUSE">
+    <thead style="background-color: rgb(169, 194, 234);">
+      <tr>
+        <th>NAME</th>
+        <th>TYPE</th>
+        <th>AREA</th>
+        <th>LOCATION</th>
+        <th>YEAR</th>
+        <th>ARCHITECT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>SATORI HOUSE</td>
+        <td>Private House</td>
+        <td>600 M<sup>2</sup></td>
+        <td>Mallorca</td>
+        <td>2023</td>
+        <td>Architect 1</td>
+      </tr>
+      <tr>
+        <td colspan="3" class="image-cell">
+          <img src="https://makhnostudio.com/wp-content/uploads/2023/12/25-mallorka-2-f.webp" alt="Project Pic 1">
+        </td>
+        <td colspan="3" class="image-cell">
+          <img src="https://makhnostudio.com/wp-content/uploads/2023/12/9-mallorka-2-r2.webp" alt="Project Pic 2">
+        </td>
+      </tr>
+      
+      <tr>
+        <td colspan="3" class="image-cell">
+          <img src="https://makhnostudio.com/wp-content/uploads/2023/12/5-mallorca-2.webp" alt="Project Pic 3">
+        </td>
+        <td colspan="3" class="image-cell">
+          <img src="https://makhnostudio.com/wp-content/uploads/2023/12/31-mallorka-2-f.webp" alt="Project Pic 4">
+        </td>
+      </tr>
+     
+    </tbody>
+  </table>
+<br>
+<table cellspacing="10" cellpadding="10" class="table1" id="UNDERGROUND_HOUSE">
+  <thead style="background-color: rgb(169, 194, 234);">
+    <tr>
+      <th>NAME</th>
+      <th>TYPE</th>
+      <th>AREA</th>
+      <th>LOCATION</th>
+      <th>YEAR</th>
+      <th>ARCHITECT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>UNDERGROUND HOUSE</td>
+      <td>Private House</td>
+      <td>2 280 SQ.M</td>
+      <td>Ukraine</td>
+      <td>2019</td>
+      <td>Architect 1</td>
+    </tr>
+    <tr>
+      <td colspan="3" class="image-cell">
+        <img src="https://makhnostudio.com/wp-content/uploads/2023/03/Plan-B24.webp" alt="Project Pic 1">
+      </td>
+      <td colspan="3" class="image-cell">
+        <img src="https://makhnostudio.com/wp-content/uploads/2023/03/Plan-B7.webp" alt="Project Pic 2">
+      </td>
+    </tr>
+    
+    <tr>
+      <td colspan="3" class="image-cell">
+        <img src="https://makhnostudio.com/wp-content/uploads/2023/03/Plan-B3.webp" alt="Project Pic 3">
+      </td>
+      <td colspan="3" class="image-cell">
+        <img src="https://makhnostudio.com/wp-content/uploads/2023/03/Plan-B4.webp" alt="Project Pic 4">
+      </td>
+    </tr>
    
-  </script>
+  </tbody>
+</table>
+<br>
+<table cellspacing="10" cellpadding="10" class="table1" id="SUSANNA_HOUSE">
+  <thead style="background-color: rgb(169, 194, 234);">
+    <tr>
+      <th>NAME</th>
+      <th>TYPE</th>
+      <th>AREA</th>
+      <th>LOCATION</th>
+      <th>YEAR</th>
+      <th>ARCHITECT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SUSANNA HOUSE</td>
+      <td>Private House</td>
+      <td>500 M<sup>2</sup></td>
+      <td>Grandola, Portugal</td>
+      <td>2021</td>
+      <td>Architect 1</td>
+    </tr>
+    <tr>
+      <td colspan="3" class="image-cell">
+        <img src="https://images.adsttc.com/media/images/659b/ebd3/9936/3f2e/04cb/25c1/slideshow/casa-fonte-das-perdizes-goncalobonniz-arquitectos_12.jpg?1704717280" alt="Project Pic 1">
+      </td>
+      <td colspan="3" class="image-cell">
+        <img src="https://images.adsttc.com/media/images/659b/ebc5/9936/3f17/84c3/bb35/slideshow/casa-fonte-das-perdizes-goncalobonniz-arquitectos_1.jpg?1704717328" alt="Project Pic 2">
+      </td>
+    </tr>
+    
+    <tr>
+      <td colspan="3" class="image-cell">
+        <img src="https://images.adsttc.com/media/images/659b/ebd1/e4ff/ba67/bbb1/b846/slideshow/casa-fonte-das-perdizes-goncalobonniz-arquitectos_6.jpg?1704717281" alt="Project Pic 3">
+      </td>
+      <td colspan="3" class="image-cell">
+        <img src="https://images.adsttc.com/media/images/659b/ebd3/9936/3f17/84c3/bb3c/slideshow/casa-fonte-das-perdizes-goncalobonniz-arquitectos_10.jpg?1704717294" alt="Project Pic 4">
+      </td>
+    </tr>
+   
+  </tbody>
+</table>
+<br>
+<table cellspacing="10" cellpadding="10" class="table1" id="MARSH_LANDSCAPING">
+  <thead style="background-color: rgb(169, 194, 234);">
+    <tr>
+      <th>NAME</th>
+      <th>TYPE</th>
+      <th>AREA</th>
+      <th>LOCATION</th>
+      <th>YEAR</th>
+      <th>ARCHITECT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MARSH LANDSCAPING</td>
+      <td>LandScaping Apartments</td>
+      <td>22000 M<sup>2</sup></td>
+      <td>Prahran, Australia</td>
+      <td>2022</td>
+      <td>Architect 1</td>
+    </tr>
+    <tr>
+      <td colspan="3" class="image-cell">
+        <img src="https://images.adsttc.com/media/images/636e/3e79/0036/595d/20b2/6ac7/slideshow/no-6-sydney-street-apartments-wood-marsh_7.jpg?1668169502" alt="Project Pic 1">
+      </td>
+      <td colspan="3" class="image-cell">
+        <img src="https://images.adsttc.com/media/images/658c/753f/9936/3f23/8b10/a169/slideshow/pb-house-d-compose-architect_3.jpg?1703703886" alt="Project Pic 2">
+      </td>
+    </tr>
+    
+    <tr>
+      <td colspan="3" class="image-cell">
+        <img src="https://images.adsttc.com/media/images/658c/75a9/9936/3f23/8b10/a175/slideshow/pb-house-d-compose-architect_8.jpg?1703703994" alt="Project Pic 3">
+      </td>
+      <td colspan="3" class="image-cell">
+        <img src="https://images.adsttc.com/media/images/658c/754a/9936/3f23/8b10/a16b/slideshow/pb-house-d-compose-architect_5.jpg?1703703898" alt="Project Pic 4">
+      </td>
+    </tr>
+   
+  </tbody>
+</table>
+<br>
+<table cellspacing="10" cellpadding="10" class="table1" id="MASARYCKA">
+  <thead style="background-color: rgb(169, 194, 234);">
+    <tr>
+      <th>NAME</th>
+      <th>TYPE</th>
+      <th>AREA</th>
+      <th>LOCATION</th>
+      <th>YEAR</th>
+      <th>ARCHITECT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MASARYCKA</td>
+      <td>Office Building</td>
+      <td>28000 M<sup>2</sup></td>
+      <td>Mallorca</td>
+      <td>2023</td>
+      <td>Architect 1</td>
+    </tr>
+    <tr>
+      <td colspan="3" class="image-cell">
+        <img src="https://images.adsttc.com/media/images/6579/e1d9/23c8/ee75/d4c2/7601/slideshow/masarycka-building-zaha-hadid-architects_14.jpg?1702486519" alt="Project Pic 1">
+      </td>
+      <td colspan="3" class="image-cell">
+        <img src="https://images.adsttc.com/media/images/6579/e1dc/23c8/ee75/d4c2/7606/slideshow/masarycka-building-zaha-hadid-architects_16.jpg?1702486529" alt="Project Pic 2">
+      </td>
+    </tr>
+    
+    <tr>
+      <td colspan="3" class="image-cell">
+        <img src="https://images.adsttc.com/media/images/6579/e1d6/23c8/ee75/d4c2/75fe/slideshow/masarycka-building-zaha-hadid-architects_2.jpg?1702486515" alt="Project Pic 3">
+      </td>
+      <td colspan="3" class="image-cell">
+        <img src="https://images.adsttc.com/media/images/6579/e1dc/23c8/ee75/d4c2/7605/slideshow/masarycka-building-zaha-hadid-architects_9.jpg?1702486538" alt="Project Pic 4">
+      </td>
+    </tr>
+   
+  </tbody>
+</table>
+<br>
+<table cellspacing="10" cellpadding="10" class="table1" id="ISLA_BROWN_CORINTHIA">
+  <thead style="background-color: rgb(169, 194, 234);">
+    <tr>
+      <th>NAME</th>
+      <th>TYPE</th>
+      <th>AREA</th>
+      <th>LOCATION</th>
+      <th>YEAR</th>
+      <th>ARCHITECT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ISLA BROWN CORINTHIA</td>
+      <td>Hotel</td>
+      <td>8918 M<sup>2</sup></td>
+      <td>Corinthos, Greece</td>
+      <td>2022</td>
+      <td>Architect 1</td>
+    </tr>
+    <tr>
+      <td colspan="3" class="image-cell">
+        <img src="https://images.adsttc.com/media/images/6581/acc1/a700/7801/7c72/a59a/slideshow/isla-brown-corinthia-elastic-architects_13.jpg?1702997207" alt="Project Pic 1">
+      </td>
+      <td colspan="3" class="image-cell">
+        <img src="https://images.adsttc.com/media/images/6581/acc7/5ba1/5701/7c02/e682/slideshow/isla-brown-corinthia-elastic-architects_15.jpg?1702997207" alt="Project Pic 2">
+      </td>
+    </tr>
+    
+    <tr>
+      <td colspan="3" class="image-cell">
+        <img src="https://images.adsttc.com/media/images/6581/acc4/5ba1/5701/7c02/e67e/slideshow/isla-brown-corinthia-elastic-architects_7.jpg?1702997220" alt="Project Pic 3">
+      </td>
+      <td colspan="3" class="image-cell">
+        <img src="https://images.adsttc.com/media/images/6581/acb4/a700/7801/7c72/a595/slideshow/isla-brown-corinthia-elastic-architects_10.jpg?1702997200" alt="Project Pic 4">
+      </td>
+    </tr>
+   
+  </tbody>
+</table>
+<br>
+
 </body>
 </html>
