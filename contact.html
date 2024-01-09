@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Company</title>
+    <link rel="stylesheet" href="./mainstyle.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="mainstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif !important;
+                }
+        .navbari {
+    height: 100vh; 
+    background-image: url("https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+        }
+    </style>
+</head>
+
+<header>
+    <a href="#" onclick="goBack()">Back</a>
+</header>
+
+<body>
+    <div class="navbari">
+        <nav>
+            <a class="logo" href="#">Arkitetktet e vegjel</a>
+            <ul>
+                <li><a href="./kodi.html">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="./contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+   
+    <div class="container">
+        
+        <h1 class="moving-text">Let's Talk ?</h1>
+        <hr>
+
+        <form id="contactForm" action="#">
+            <label>
+                <input type="radio" name="contactOption" value="projectOption">
+                Discuss a project
+            </label>
+            <label>
+                <input type="radio" name="contactOption" value="teamOption">
+                Join the team
+            </label>
+            <label>
+                <input type="radio" name="contactOption" value="conversationOption">
+                Send an Email
+            </label>
+
+            <div class="form-section" id="projectOption">
+                <input type="text" name="name" placeholder="Name:" >
+                <input type="tel" name="phone" placeholder="Phone: (044)-(111)-(111)" >
+                <input type="email" name="email" placeholder="Email:">
+                <input type="text" name="comment" placeholder="Comment (Optional)">
+                <button type="submit">Submit</button>
+            </div>
+
+            <div class="form-section" id="teamOption">
+                <input type="text" name="name" placeholder="Name:" >
+                <input type="tel" name="phone" placeholder="Phone: (044)-(111)-(111)" >
+                <input type="email" name="email" placeholder="Email:" >
+                <input type="text" name="profession" placeholder="Profession:" >
+                <input type="text" name="comment" placeholder="Comment (Optional)">
+                <input type="file" name="file-upload" >
+                <button type="submit">Submit</button>
+            </div>
+
+            <div class="form-section" id="conversationOption">
+                <form id="emailForm">
+                    
+                    <input type="text" id="name" name="name" placeholder="Name and Surname" >
+                    <input type="email" id="email" name="email" placeholder="Email Address" >
+                    <textarea id="message" name="message" placeholder="Message.." ></textarea>
+        
+                    <button type="button" onclick="sendEmail()">Send an Email</button>
+                </form>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const contactForm = document.getElementById('contactForm');
+            const projectOption = document.getElementById('projectOption');
+            const teamOption = document.getElementById('teamOption');
+            const conversationOption = document.getElementById('conversationOption');
+
+            contactForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+                
+                const selectedOption = document.querySelector('input[name="contactOption"]:checked').value;
+
+                switch (selectedOption) {
+                    case 'projectOption':
+                       
+                        console.log('Project form submitted');
+                        break;
+                    case 'teamOption':
+                     
+                        console.log('Join The Team form submitted');
+                        break;
+                    case 'conversationOption':
+                       
+                        console.log('Send an email form submitted');
+                        break;
+                    default:
+                        console.error('Invalid option selected');
+                }
+            });
+
+        
+            document.querySelectorAll('input[name="contactOption"]').forEach(function (radio) {
+                radio.addEventListener('change', function () {
+                    projectOption.style.display = 'none';
+                    teamOption.style.display = 'none';
+                    conversationOption.style.display = 'none';
+
+                    const selectedOption = document.querySelector('input[name="contactOption"]:checked').value;
+
+                    switch (selectedOption) {
+                        case 'projectOption':
+                            projectOption.style.display = 'block';
+                            break;
+                        case 'teamOption':
+                            teamOption.style.display = 'block';
+                            break;
+                        case 'conversationOption':
+                            conversationOption.style.display = 'block';
+                            break;
+                        default:
+                            console.error('Invalid option selected');
+                    }
+                });
+            });
+        });
+
+        function sendEmail() {
+  
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var message = document.getElementById('message').value;
+
+    var subject = 'Message from: ' + name;
+
+    var body = 'Name and Surname: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message;
+
+    window.open('mailto:website.architectural@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body));
+}
+
+function goBack() {
+        window.history.back();
+    }
+    </script>
+</body>
+</html>
