@@ -195,12 +195,14 @@ nav a:hover {
     z-index: 2;
 }
 
-.navbari a.logo {
-    color: #fff;
+.navbari img.logo {
+    color: #9b4d4d;
     text-decoration: none;
-    font-size: 28px; /* Slightly larger font size */
-    font-weight: bold;
+        font-weight: bold;
+        height: 5%;
+        width: 5%;
     letter-spacing: 2px;
+    margin-left: 3%;
 }
 
 .navbari ul {
@@ -216,7 +218,7 @@ nav a:hover {
 
 .navbari a {
     text-decoration: none;
-    color: #fff;
+    color: #19c5e8;
     font-weight: bold;
     font-size: 18px;
     position: relative;
@@ -248,7 +250,7 @@ nav a:hover {
     position: absolute;
     bottom: 20px;
     left: 20px;
-    font-size: 4.0em; /* Adjusted font size */
+    font-size: 4.0em;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     opacity: 1;
@@ -267,7 +269,7 @@ nav a:hover {
 
 .navbari a {
     position: relative;
-    color: #fff;
+    color: rgb(56, 126, 144);
     text-decoration: none;
     font-size: 18px;
     margin: 0 15px;
@@ -293,7 +295,7 @@ nav a:hover {
     transform-origin: bottom left;
 }
 
-/* Responsive adjustments */
+/* Responsive */
 @media (max-width: 767.98px) {
     .navbari nav {
         flex-direction: column;
@@ -313,7 +315,7 @@ nav a:hover {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 20px; /* Adjust the height for the fading effect */
+    height: 20px; /* fading effecti */
     background: linear-gradient(to bottom, transparent, white);
     z-index: 1;
 }
@@ -654,7 +656,7 @@ footer {
 /* pertest */
 
 
-.container {
+.container22 {
     max-width: 600px;
     background-color: rgba(14, 40, 96, 0.6); 
     padding: 20px;
@@ -764,5 +766,137 @@ textarea {
 textarea:focus {
     border-color: #3498db;
     box-shadow: 0 0 5px rgba(52, 152, 219, 0.7);
+}
+
+/* Team style */
+
+.team .members{
+    position: relative;
+    padding: 30px;
+    box-shadow:0px 2px 15px rgba(0, 0,0,0.1);
+    border-radius: 5px;
+    background:#fff ;
+
+}
+.team p {
+    color: black;
+}
+.team .members .teampic{
+    overflow: hidden;
+    width: 180px;
+    background:#fff ;
+
+}
+.team .members .members-info{
+    padding-left: 30px;
+    position:absolute ;
+    left: 30%;
+    bottom: 40%;
+    background:#fff;
+
+
+}
+.team .members h4{
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color:black ;
+    background:#fff ;
+    
+
+
+}
+.team .members span{
+    display: block;
+    font-size: 15px;
+    padding-bottom: 10px;
+    position: relative;
+    font-weight: 500;
+    background:#fff ;
+
+}
+.team .members span::after{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: black;
+    bottom: 0;
+    left: 0;
+
+}
+.team .members p{
+    margin:10px 0 0 0;
+    font-size: 14px;
+    background:#fff ;
+
+
+}
+.team .members .social{
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    position:absolute ;
+    left: 45%;
+    bottom: 15%;
+    background:#fff ;
+
+
+}
+.team .members .social a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: #fff;
+    
+}
+.team .members .social a i{
+    color: black;
+    font-size: 16px;
+    margin: 0 2px;
+    background:#fff ;
+
+}
+.section-title{
+    text-align: center;
+    margin-top: 15px;
+}
+.team .members .social a:hover{
+    background: black ;
+
+}
+.team .members .social a:hover i{
+    color:black;
+}
+.team .members .social a+a{
+    margin-left: 8px;
+}
+section{
+    padding: 60px 0;
+    overflow: hidden;
+}
+.underline{
+    width: 150px;
+    height: 1px;
+    background-color: black;
+    margin: auto;
+    margin-top: -30px;
+}
+.section-title h2{
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    color: black;
+
+}
+.section-title p{
+    margin-top: 20px;
+
 }
 
