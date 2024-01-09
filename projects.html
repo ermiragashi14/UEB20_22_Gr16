@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Gallery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ece4e1;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    h1 {
+      margin-top: 50px;  
+      margin-bottom: 30px;
+    }
+
+    p {
+      max-width: 800px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    table {
+      width: 80%;
+      border-spacing: 20px;
+    }
+
+    .project-card {
+      display: table-cell;
+      max-width: 300px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      border-radius: 10px;
+      background-color: rgba(0, 0, 0, 0, 0.3); 
+      transition: transform 0.3s ease-in-out;
+      margin-bottom: 20px;
+    }
+
+    .project-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.893);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .project-card-content {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .project-name {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .details-btn {
+
+      background-color:rgba(85, 108, 158, 0.6);
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+
+    }
+
+    .details-btn:hover {
+      background-color: #45a049;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-content {
+      margin: 10% auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .close-btn {
+      color: black;
+      font-size: 24px;
+      font-weight: bold;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      cursor: pointer;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <h1>PROJECTS</h1>
+  <p>Our projects are a testament to the studio’s commitment to cultural exploration, innovation, and the power of nature. Each project is a unique reflection of the client’s needs and MAKHNO’s vision, resulting in spaces that are both stunning and meaningful.</p>
+  
+  <table>
+    <tr>
+      <td class="project-card">
+        <img src="https://makhnostudio.com/wp-content/uploads/2023/12/8-mallorca-2-r2.webp" alt="Project 1">
+        <div class="project-card-content">
+          <div class="project-name">Project 1</div>
+          <button class="details-btn">Click for Details</button>
+        </div>
+      </td>
+
+      <td class="project-card">
+        <img src="https://makhnostudio.com/wp-content/uploads/2023/03/Plan-B3.webp" alt="Project 2">
+        <div class="project-card-content">
+          <div class="project-name">Project 2</div>
+          <button class="details-btn">Click for Details</button>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="project-card">
+        <img src="https://images.adsttc.com/media/images/659b/ebd1/9936/3f17/84c3/bb39/slideshow/casa-fonte-das-perdizes-goncalobonniz-arquitectos_1.jpg?1704717281" alt="Project 3">
+        <div class="project-card-content">
+          <div class="project-name">Project 3</div>
+          <button class="details-btn">Click for Details</button>
+        </div>
+      </td>
+
+      <td class="project-card">
+        <img src="https://images.adsttc.com/media/images/658c/7566/9936/3f23/8b10/a16e/slideshow/pb-house-d-compose-architect_10.jpg?1703703926" alt="Project 4">
+        <div class="project-card-content">
+          <div class="project-name">Project 4</div>
+          <button class="details-btn">Click for Details</button>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="project-card">
+        <img src="https://images.adsttc.com/media/images/6579/e1d5/23c8/ee75/d4c2/75fc/slideshow/masarycka-building-zaha-hadid-architects_6.jpg?1702486518" alt="Project 5">
+        <div class="project-card-content">
+          <div class="project-name">Project 5</div>
+          <button class="details-btn">Click for Details</button>
+        </div>
+      </td>
+
+      <td class="project-card">
+        <img src="https://images.adsttc.com/media/images/6581/acc5/5ba1/5701/7c02/e680/slideshow/isla-brown-corinthia-elastic-architects_5.jpg?1702997218" alt="Project 6">
+        <div class="project-card-content">
+          <div class="project-name">Project 6</div>
+          <button class="details-btn">Click for Details</button>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <script>
+   
+  </script>
+</body>
+</html>
