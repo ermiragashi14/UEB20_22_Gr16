@@ -21,6 +21,15 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
     />
+    <style>
+      .event {
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+      padding: 10px;
+      cursor: grab;
+    }
+    </style>
+
   </head>
 
   <body>
@@ -208,60 +217,53 @@
       </main>
       <aside id="aside">
         <h2>Upcoming Events</h2>
-        <div class="event">
-          <h3>
-            <a href="events.html#architectural-workshop"
-              >Architectural Workshop</a
-            >
-          </h3>
+        <div class="event" draggable="true" ondragstart="drag(event)">
+          <h3><a href="events.html#architectural-workshop">Architectural Workshop</a></h3>
           <p class="date">June 15, 2024</p>
           <p class="location">Prishtine, Kosovo</p>
-          <a href="events.html#architectural-workshop" class="event-link"
-            >Learn More</a
-          >
+          <a href="events.html#architectural-workshop" class="event-link">Learn More</a>
         </div>
-
-        <div class="event">
-          <h3>
-            <a href="events.html#design-excellence-seminar"
-              >Design Excellence Seminar</a
-            >
-          </h3>
+      
+        <div class="event" draggable="true" ondragstart="drag(event)">
+          <h3><a href="events.html#design-excellence-seminar">Design Excellence Seminar</a></h3>
           <p class="date">July 5, 2024</p>
           <p class="location">Virtual Event</p>
-          <a href="events.html#design-excellence-seminar" class="event-link"
-            >Register Now</a
-          >
+          <a href="events.html#design-excellence-seminar" class="event-link">Register Now</a>
         </div>
-
-        <div class="event">
-          <h3>
-            <a href="events.html#sustainable-architecture-forum"
-              >Sustainable Architecture Forum</a
-            >
-          </h3>
+      
+        <div class="event" draggable="true" ondragstart="drag(event)">
+          <h3><a href="events.html#sustainable-architecture-forum">Sustainable Architecture Forum</a></h3>
           <p class="date">August 20, 2024</p>
           <p class="location">Skopje, North Macedonia</p>
-          <a
-            href="events.html#sustainable-architecture-forum"
-            class="event-link"
-            >Details Here</a
-          >
+          <a href="events.html#sustainable-architecture-forum" class="event-link">Details Here</a>
         </div>
-
-        <div class="event">
-          <h3>
-            <a href="events.html#urban-planning-conference"
-              >Urban Planning Conference</a
-            >
-          </h3>
+      
+        <div class="event" draggable="true" ondragstart="drag(event)">
+          <h3><a href="events.html#urban-planning-conference">Urban Planning Conference</a></h3>
           <p class="date">September 10, 2024</p>
           <p class="location">Tirana, Albania</p>
-          <a href="events.html#urban-planning-conference" class="event-link"
-            >Join Us</a
-          >
+          <a href="events.html#urban-planning-conference" class="event-link">Join Us</a>
         </div>
       </aside>
+      
+      <script>
+        function allowDrop(event) {
+          event.preventDefault();
+        }
+      
+        function drag(event) {
+          event.dataTransfer.setData("text", event.target.innerHTML);
+        }
+      
+        function drop(event) {
+          event.preventDefault();
+          var data = event.dataTransfer.getData("text");
+          var draggedElement = document.createElement("div");
+          draggedElement.innerHTML = data;
+          event.target.parentNode.replaceChild(draggedElement, event.target);
+          event.target.parentNode.insertBefore(event.target, draggedElement);
+        }
+      </script>
     </section>
 
     <section id="testimonials" class="py-5">
@@ -331,6 +333,9 @@
                   Alan Johnson, Impressed Client
                 </footer>
               </blockquote>
+
+              
+
             </div>
           </div>
         </div>

@@ -13,167 +13,86 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
-            color: #2c3e50;
         }
 
-        #architectural-services-section {
-            text-align: center;
-            padding: 50px;
+        li{
+            color: black;
         }
 
-        h2 {
-            color: #3498db;
-            margin-bottom: 30px;
-            font-size: 2.5em;
+        .content ul li {
+            list-style-type: upper-roman;
         }
 
-        .services-container {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
+        .content ol li {
+            list-style-type: disc;
         }
 
-        .service-category {
-            width: 100%;
-            margin-bottom: 30px;
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .architecture-info {
             display: flex;
             justify-content: space-between;
-            max-height: 70vh;
+            margin-top: 50px;
         }
 
-        .service-category h3 {
-            color: #2c3e50;
+        .architecture-info img {
+            max-width: 45%;
+            border-radius: 8px;
         }
 
-        .left-content,
-        .right-content {
-            width: 48%; /* Adjust as needed */
+        .architecture-description {
+            max-width: 50%;
         }
 
-        .left-content {
-            float: left;
+        .architecture-description h2 {
+            color: #333;
         }
 
-        .right-content {
-            float: right;
+        .architecture-description p {
+            line-height: 1.6;
+            color: #666;
         }
 
-        .video-container {
-            width: 100%;
-            margin-top: 20px;
-        }
-
-        ol, ul {
-            list-style-type: none;
+        .architecture-description ul {
+            list-style: none;
             padding: 0;
         }
 
-        li {
-            margin: 10px 0;
-        }
-
-        .animated-image {
-            margin-top: 30px;
-        }
-
-        /* Add your custom styles and animations here */
-        .animate__animated {
-            animation-duration: 1s;
-        }
-
-        .animate__fadeInUp {
-            animation-name: fadeInUp;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        #introduction {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        #our-services,
-        #why-choose-us {
-            margin-bottom: 30px;
-            width: 90%;
-            
-        }
-
-        #video-section{
-            width: 100%;
-
-        }
-
-        ol,
-        ul {
-            padding-left: 20px;
-        }
-
-        ol li,
-        ul li {
+        .architecture-description li {
             margin-bottom: 10px;
         }
 
-        .animated-image img {
-            width: 100%;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-
-        #why-choose-us div{
-            display: inline-block;
-        }
-
-        #why-choose-us .highlight-box {
-            background-color: transparent;
-            color: #fff;
-            color: #2c3e50;
-            box-shadow: rgba(0, 0, 0, 0.1);
-            text-align: center;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 10px 0;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 30%;
-        }
-
-        #why-choose-us .highlight-text {
-            font-weight: bold;
-            font-size: 18px;
-            display: block;
-            margin-top: 20px;
-            color: #27ae60;
-        }
-
-        #video-section {
-            text-align: center;
+        .architecture-description h3 {
+            color: #333;
         }
 
         .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            width: 45%;
         }
 
-        .video-container video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 10px;
+        .video-container iframe {
+            width: 48%;
+            height: 300px;
         }
+
+        .description{
+            border: #333;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10vh; 
+            text-align: center; 
+            color: #333;
+            padding: 2vh 0 2vh 0;
+        }
+
+
     </style>
 </head>
 
@@ -194,114 +113,90 @@
         <h1 class="thenje animate__animated animate__fadeInUp" style="margin: 50px 0px 0px 50px; padding-bottom: 1vh;">We offer a wide<br>range of Services...</h1>
     </div>
 
-    <div class="services-container">
-        <section id="introduction" class="animate__animated animate__fadeIn" style="color: black;">
-            <h1 style="color: #2c3e50; font-size: 28px;">Welcome to Our Architectural Services</h1>
-            <p>
-                At Your Architectural Firm, we are dedicated to providing exceptional architectural services that cater to a wide range of needs. Our commitment to innovation, attention to detail, and client collaboration sets us apart in the field.
-            </p>
-        </section>
 
-        <section id="architectural-services-section" class="animate__animated animate__fadeInUp">
-            <h2>Architectural Services</h2>
-        
-            <div class="services-container">
-        
-                <!-- Interior Architecture Services -->
-                <div class="service-category">
-                    <div class="left-content">
-                        <h3 style="color: #2c3e50;">Interior Architecture</h3>
+    <div class="content">
+        <div class="description">
+            <h2>Exterior Architecture</h2>
+                            <p style="color: #333;">
+                                Elevate your living and working spaces with our innovative interior architectural designs. Our
+                                interior services include:
+                            </p>
+        </div>
+        <div class="architecture-info">
+            <iframe class="video-container" src="https://shuttle-storage.s3.amazonaws.com/arkshelter/system/video/135/video.webm?1648821220" frameborder="0" allowfullscreen autoplay muted></iframe>
+            
+            <div class="architecture-description">
+                
+                <ul>
+                    <li>
+                        Site Analysis and Planning
                         <ol>
-                            <li>Unique Interior Design</li>
-                            <li>Space Optimization</li>
-                            <li>Customized Decor Solutions</li>
-                            <li>Collaborative Interior Planning</li>
+                            <li>Thorough analysis of the site's topography and environmental factors.</li>
+                            <li>Strategic planning for optimal space utilization.</li>
+                            <li>Consideration of zoning regulations and building codes.</li>
                         </ol>
-                    </div>
-                    <div class="right-content">
-                        <div class="video-container">
-                            <!-- Embed your interior services video here -->
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/your_interior_video_id" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
-        
-                <!-- Second Div (Adjust as needed) -->
-                <div class="service-category">
-                    <div class="right-content">
-                        <div class="video-container">
-                            <!-- Embed your second div video here -->
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/your_second_div_video_id" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div class="left-content">
-                        <h3 style="color: #2c3e50;">Second Div Content</h3>
+                    </li>
+                    <li>
+                        Landscape Design
                         <ol>
-                            <li>Unique Interior Design</li>
-                            <li>Space Optimization</li>
-                            <li>Customized Decor Solutions</li>
-                            <li>Collaborative Interior Planning</li>
+                            <li>Customized landscape designs tailored to the client's preferences.</li>
+                            <li>Integration of sustainable and low-maintenance plant selections.</li>
+                            <li>Implementation of hardscape elements for functional and aesthetic purposes.</li>
                         </ol>
-                    </div>
-                </div>
-        
+                    </li>
+                    <li>
+                        Facade Innovation
+                        <ol>
+                            <li>Exploration of innovative materials and textures for exterior facades.</li>
+                            <li>Attention to energy-efficient solutions for improved building performance.</li>
+                            <li>Collaboration with clients to achieve a unique and visually appealing facade.</li>
+                        </ol>
+                    </li>
+                </ul>
+                
             </div>
-        
-            <div class="animated-image">
-                <!-- Add your animated image or gif here -->
-                <img src="path/to/your/animated-image.gif" alt="Animated Image">
-            </div>
-        
-            <!-- Additional Creative Element -->
-            <div class="creative-element">
-                <p>Explore the boundaries of creativity with our innovative architectural solutions!</p>
-            </div>
-        
-        </section>
+        </div>
 
-        <section id="why-choose-us" class="animate__animated animate__fadeInUp" style="color: black;">
-            <h2 style="color: #2c3e50; text-align: center;">Why Choose Us?</h2>
-        
-            <!-- Divs with Styling -->
-            <div class="highlight-box">
-                <h3>Exceptional Designs</h3>
-                <p>Insert your content about exceptional designs here.</p>
-            </div>
-        
-            <div class="highlight-box">
-                <h3>Innovative Approach</h3>
-                <p>Insert your content about the innovative approach here.</p>
-            </div>
-        
-            <div class="highlight-box">
-                <h3>Client-Centric Focus</h3>
-                <p>Insert your content about client-centric focus here.</p>
-            </div>
-        
-            <!-- Span with Styling -->
-            <span class="highlight-text" style="font-weight: bold; font-size: 18px; display: block; margin-top: 20px; color: #27ae60;">We turn your dreams into architectural masterpieces!</span>
-        </section>
+        <div class="description">
+            <h2>Interior Architecture</h2>
+                            <p>
+                                Elevate your living and working spaces with our innovative interior architectural designs. Our
+                                interior services include:
+                            </p>
+        </div>
 
-        <section id="video-section" class="animate__animated animate__fadeInUp" style="color: black;">
-            <h2 style="color: #2c3e50;">Explore Our Work</h2>
-
-            <!-- Video Placeholder -->
-            <div class="video-container">
-                <!-- Replace the source URL with your actual video source -->
-                <video controls>
-                    <source src="https://shuttle-storage.s3.amazonaws.com/arkshelter/system/video/135/video.webm?1648821220" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+        <div class="architecture-info">
+            <iframe class="video-container" src="https://shuttle-storage.s3.amazonaws.com/arkshelter/system/video/135/video.webm?1648821220" frameborder="0" allowfullscreen autoplay muted></iframe>
+            <div class="architecture-description">
+                <ul>
+                    <li>
+                        Space Planning and Optimization
+                        <ol>
+                            <li>Conduct detailed assessments of interior spaces for optimal functionality.</li>
+                            <li>Create customized space plans to enhance workflow and aesthetics.</li>
+                            <li>Implement smart design solutions for efficient space utilization.</li>
+                        </ol>
+                    </li>
+                    <li>
+                        Material Selection and Coordination
+                        <ol>
+                            <li>Provide expert guidance in selecting high-quality and sustainable materials.</li>
+                            <li>Coordinate materials for a harmonious and cohesive interior design.</li>
+                            <li>Consider durability, maintenance, and visual appeal in material choices.</li>
+                        </ol>
+                    </li>
+                    <li>
+                        Lighting and Acoustic Solutions
+                        <ol>
+                            <li>Strategically place lighting fixtures for ambiance and functionality.</li>
+                            <li>Incorporate acoustic solutions for a comfortable and noise-free environment.</li>
+                            <li>Integrate smart lighting controls for a personalized user experience.</li>
+                        </ol>
+                    </li>
+                </ul>
+                
             </div>
-        </section>
-        
-
+        </div>
     </div>
-
-    <footer>
-        <!-- Include your footer content here -->
-    </footer>
-
-</body>
-
+    </body>
 </html>
