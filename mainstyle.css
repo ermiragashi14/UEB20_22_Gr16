@@ -174,9 +174,12 @@ nav a:hover {
 }
 
 
+
+
+
 /* Navbar styles */
 .navbari {
-    height: 100vh; /* Adjust the percentage based on your preference */
+    height: 90vh; 
     background-image: url("https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
     background-size: cover;
     background-position: center;
@@ -342,6 +345,47 @@ nav a:hover {
     opacity: 0;
 }
 
+.about_section .img-box {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  .about_section .img-box img {
+    max-width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .about_section .detail-box p {
+    color: #1f1f1f;
+    margin-top: 15px;
+  }
+  
+  .about_section .detail-box a {
+    display: inline-block;
+    padding: 10px 35px;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 0px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    border: 1px solid #007bff;
+    margin-top: 15px;
+  }
+  
+  .about_section .detail-box a:hover {
+    background-color: transparent;
+    color: #007bff;
+  }
+
 @keyframes revealText {
     0% {
         width: 0;
@@ -458,9 +502,8 @@ footer {
     background-color: #f8f9fa;
     color: #c8d300;
     height: 100vh;
-    border-radius: 15px;
     margin: 0 10% 0 10%;
-    background-image: url("pics/Projekti\ fotot/gigi.gif");
+    background-image: url("pics/Projekti\ fotot/new3.jpg");
 }
 
 #servicesOverview section {
@@ -473,7 +516,6 @@ footer {
     color: #fff;
     height: 80%;
     transition: background-color 0.3s;
-    border-radius: 30px;
 }
 
 #servicesOverview section:hover {
@@ -488,7 +530,7 @@ footer {
     align-items: center;
 }
 
-#sherbimet{
+/* #sherbimet{
     text-align: center;
     border: 10%;
     padding: auto;
@@ -499,7 +541,6 @@ footer {
 }
 
 #sherbimet :hover{
-    border-radius: 30px;
     background-color: #c2dcee;
     cursor: crosshair;
 }
@@ -520,7 +561,6 @@ footer {
     flex: 1;
     padding: 20px;
     transition: background-color 0.3s;
-    border-radius: 15px;
     display: flex;
     flex-direction: column; 
 }
@@ -539,7 +579,6 @@ footer {
     transition: background-color 0.3s, color 0.3s;
     display: flex;
     margin-bottom: 10px;
-    border-radius: 25px;
     text-align: center;
 }
 
@@ -559,10 +598,10 @@ footer {
 }
 
 #perKlient{
-    border-radius: 40px; 
+
     background-color: transparent; 
     margin: 2% 5% 2% 5%;
-    background-image: url("pics/Projekti\ fotot/gigi.gif");
+   
 }
 
 @keyframes fadeInUp {
@@ -583,7 +622,7 @@ footer {
     100% {
         opacity: 1;
     }
-}
+} */
 
 #aside {
     background-color: #f8f9fa;
