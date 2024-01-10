@@ -1,13 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Our Architectural Services</title>
+    <!-- Include your stylesheets and other dependencies here -->
+    <link rel="stylesheet" href="mainstyle.css">
+    <!-- Include additional styles for this page if needed -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        li{
+            color: black;
+        }
+
+        .content ul li {
+            list-style-type: upper-roman;
+        }
+
+        .content ol li {
+            list-style-type: disc;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .architecture-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+
+        .architecture-info img {
+            max-width: 45%;
+            border-radius: 8px;
+        }
+
+        .architecture-description {
+            max-width: 50%;
+        }
+
+        .architecture-description h2 {
+            color: #333;
+        }
+
+        .architecture-description p {
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .architecture-description ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .architecture-description li {
+            margin-bottom: 10px;
+        }
+
+        .architecture-description h3 {
+            color: #333;
+        }
+
+        .video-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            width: 45%;
+        }
+
+        .video-container iframe {
+            width: 48%;
+            height: 300px;
+        }
+
+        .description{
+            border: #333;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10vh; 
+            text-align: center; 
+            color: #333;
+            padding: 2vh 0 2vh 0;
+        }
+
+
+    </style>
 </head>
+
 <body>
 
-    <p>1</p>
-    
-</body>
+    <div class="navbari">
+        <nav>
+            <img src="./pics/Projekti fotot/logore.png" class="logo" alt="">
+            <ul>
+                <li><a href="./kodi.html">Home</a></li>
+                <li><a href="./team.html">About Us</a></li>
+                <li><a href="./services.html">Services</a></li>
+                <li><a href="./projects.html">Projects</a></li>
+                <li><a href="./contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <h1 class="thenje animate__animated animate__fadeInUp" style="margin: 50px 0px 0px 50px; padding-bottom: 1vh;">We offer a wide<br>range of Services...</h1>
+    </div>
+
+
+    <div class="content">
+        <div class="description">
+            <h2>Exterior Architecture</h2>
+                            <p style="color: #333;">
+                                Elevate your living and working spaces with our innovative interior architectural designs. Our
+                                interior services include:
+                            </p>
+        </div>
+        <div class="architecture-info">
+            <iframe class="video-container" src="https://shuttle-storage.s3.amazonaws.com/arkshelter/system/video/135/video.webm?1648821220" frameborder="0" allowfullscreen autoplay muted></iframe>
+            
+            <div class="architecture-description">
+                
+                <ul>
+                    <li>
+                        Site Analysis and Planning
+                        <ol>
+                            <li>Thorough analysis of the site's topography and environmental factors.</li>
+                            <li>Strategic planning for optimal space utilization.</li>
+                            <li>Consideration of zoning regulations and building codes.</li>
+                        </ol>
+                    </li>
+                    <li>
+                        Landscape Design
+                        <ol>
+                            <li>Customized landscape designs tailored to the client's preferences.</li>
+                            <li>Integration of sustainable and low-maintenance plant selections.</li>
+                            <li>Implementation of hardscape elements for functional and aesthetic purposes.</li>
+                        </ol>
+                    </li>
+                    <li>
+                        Facade Innovation
+                        <ol>
+                            <li>Exploration of innovative materials and textures for exterior facades.</li>
+                            <li>Attention to energy-efficient solutions for improved building performance.</li>
+                            <li>Collaboration with clients to achieve a unique and visually appealing facade.</li>
+                        </ol>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+
+        <div class="description">
+            <h2>Interior Architecture</h2>
+                            <p>
+                                Elevate your living and working spaces with our innovative interior architectural designs. Our
+                                interior services include:
+                            </p>
+        </div>
+
+        <div class="architecture-info">
+            <iframe class="video-container" src="https://shuttle-storage.s3.amazonaws.com/arkshelter/system/video/135/video.webm?1648821220" frameborder="0" allowfullscreen autoplay muted></iframe>
+            <div class="architecture-description">
+                <ul>
+                    <li>
+                        Space Planning and Optimization
+                        <ol>
+                            <li>Conduct detailed assessments of interior spaces for optimal functionality.</li>
+                            <li>Create customized space plans to enhance workflow and aesthetics.</li>
+                            <li>Implement smart design solutions for efficient space utilization.</li>
+                        </ol>
+                    </li>
+                    <li>
+                        Material Selection and Coordination
+                        <ol>
+                            <li>Provide expert guidance in selecting high-quality and sustainable materials.</li>
+                            <li>Coordinate materials for a harmonious and cohesive interior design.</li>
+                            <li>Consider durability, maintenance, and visual appeal in material choices.</li>
+                        </ol>
+                    </li>
+                    <li>
+                        Lighting and Acoustic Solutions
+                        <ol>
+                            <li>Strategically place lighting fixtures for ambiance and functionality.</li>
+                            <li>Incorporate acoustic solutions for a comfortable and noise-free environment.</li>
+                            <li>Integrate smart lighting controls for a personalized user experience.</li>
+                        </ol>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+    </body>
 </html>
