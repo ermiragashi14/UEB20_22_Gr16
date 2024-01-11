@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Plan Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #quiz {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .choices {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .choice {
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .choice:hover {
+            transform: scale(1.1);
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        #result img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="quiz">
+    <h2>Personalized Plan Generator</h2>
+
+    <div class="question" id="q1">
+        <p>What is your preferred architectural style?</p>
+        <div class="choices">
+            <div class="choice" onclick="answerQuestion('Modern')">Modern</div>
+            <div class="choice" onclick="answerQuestion('Traditional')">Traditional</div>
+        </div>
+    </div>
+
+    <div class="question" id="q2" style="display: none;">
+        <p>Which living room design do you like the most?</p>
+        <div class="choices">
+            <div class="choice" onclick="answerQuestion('Living Room A')">Living Room A</div>
+            <div class="choice" onclick="answerQuestion('Living Room B')">Living Room B</div>
+        </div>
+    </div>
+
+    <div class="question" id="q3" style="display: none;">
+        <p>What color scheme do you prefer?</p>
+        <div class="choices">
+            <div class="choice" onclick="answerQuestion('Neutral')">Neutral</div>
+            <div class="choice" onclick="answerQuestion('Colorful')">Colorful</div>
+        </div>
+    </div>
+
+    <!-- Add more questions as needed -->
+
+    <button onclick="nextQuestion()">Next Question</button>
+    <button onclick="generatePlan()" style="display: none;" id="finishButton">Finish</button>
+
+    <div id="result" style="display: none;"></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</body>
+</html>
