@@ -21,6 +21,8 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
     />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
     <style>
       .event {
         border: 1px solid #ccc;
@@ -29,6 +31,7 @@
         cursor: grab;
       }
     </style>
+    
   </head>
 
   <body>
@@ -36,11 +39,12 @@
       <nav>
         <img src="./pics/Projekti fotot/logore3.png" class="logo" alt="" />
         <ul>
-          <li><a href="./kodi.html">Home</a></li>
+          <li><a href="./index.html">Home</a></li>
           <li><a href="./team.html">About Us</a></li>
           <li><a href="./services.html">Services</a></li>
           <li><a href="./projects.html">Projects</a></li>
           <li><a href="./contact.html">Contact Us</a></li>
+          <button class="btn btn-dark"><a style="color: lightgray;" href="./contact.html">Login</a></button>
         </ul>
       </nav>
       <h1
@@ -50,17 +54,52 @@
         A new way <br />of building...
       </h1>
     </div>
+   
+  
 
+  
+    <!-- <div id="perKlient">
+
+        <div>
+            <h1 id="sherbimet" style=" margin-top: 1.5%;">Services we provide</h1>
+        </div>
+
+        <section id="servicesOverview" style="border-radius: 30px;">
+
+            <div>
+                <div>
+                    <h3><a href="services.html" >For architects</a></h3>
+                    <p style="color: rgb(255, 255, 255);;">
+                        Are you an architect seeking exciting opportunities to contribute your skills and creativity? Our firm offers both part-time and full-time positions, providing a dynamic environment where innovation flourishes. Join us in shaping the future of architecture through collaborative projects and cutting-edge designs. <br>
+                    </p>
+                </div>
+
+                <div>
+                    <h3><a href="services.html">For clients</a></h3>
+                    <p style="color: rgb(255, 255, 255);">
+                        For clients envisioning their dream homes, we provide comprehensive house planning services. Our experienced team collaborates with you to understand your vision, translating it into detailed house plans that capture your unique style and preferences. Let us turn your dream home into a reality that exceeds your expectations. 
+                        
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div> -->
+  
     <section class="about_section layout_padding">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
             <div class="detail-box">
               <div class="heading_container">
-                <h2 style="color: #2c3e50;">Welcome to <span>our company</span></h2>
+                <h2>Welcome to <span>Troweld</span></h2>
               </div>
               <p>
-                Step into a world where creativity meets functionality, and design transforms spaces into experiences.We are passionate about crafting architectural marvels that not only stand the test of time but also resonate with your unique vision.
+                Simply dummy text of the printing and typesetting industry.
+                Simply <b>dummy</b> text of the printing and <u>typesetting</u> industry.
+                Lorem Ipsum has been the industry's standard dummy text ever
+                since the 1500s, when an unknown printer took a galley of type
+                and scrambled it to make a type specimen book. It has s
               </p>
               <a href="./whatWeOffer.html" target="_blank"> What we offer </a>
             </div>
@@ -128,44 +167,53 @@
         <div class="new-div">
           <i style="color: black" class="fa fa-building">
             <span style="font-weight: bold; font-family: 'Poppins'"
-              >Architectural projects</span
+              >Projekte Arkitektonike</span
             ></i
           >
           <p style="color: black">
-            Our collaboration with clients begins with a clear vision: to provide extraordinary architectural projects for various structures, ranging from private residences to public buildings.
+            Bashkëpunimi ynë me klientët fillon me një vizion të qartë: të
+            ofrojmë projekte arkitektonike të jashtëzakonshme për objekte të
+            ndryshme, duke filluar nga rezidencat private deri te ndërtesat
+            publike.
           </p>
         </div>
 
         <div class="new-div">
           <i style="color: black" class="fa fa-wrench">
             <span style="font-weight: bold; font-family: 'Poppins'"
-              >Design and Planning</span
+              >Projektim dhe Planifikim</span
             ></i
           >
           <p style="color: black">
-            We offer comprehensive architectural design and planning services. Our qualified and dedicated team ensures the realization of projects with an innovative and professional approach.
+            Ofrojmë shërbime të plota të projektimit dhe planifikimit
+            arkitektonik. Ekipi ynë i kualifikuar dhe i përkushtuar siguron
+            realizimin e projekteve me një përqasje inovative dhe profesionale.
           </p>
         </div>
 
         <div class="new-div">
           <i style="color: black" class="fa fa-paint-brush">
             <span style="font-weight: bold; font-family: 'Poppins'"
-              >Unique design</span
+              >Dizajn Unik</span
             ></i
           >
           <p style="color: black">
-            Every project we create includes a unique and personalized design. We are dedicated to every detail, ensuring that each structure reflects the identity and needs of the client.
+            Çdo projekt që krijojmë përfshin një dizajn unik dhe personalizuar.
+            Ne jemi të përkushtuar në çdo detaj, duke siguruar se çdo objekt
+            reflekton identitetin dhe nevojat e klientit.
           </p>
         </div>
 
         <div class="new-div">
           <i style="color: black" class="fa fa-handshake-o">
             <span style="font-weight: bold; font-family: 'Poppins'"
-              >Tight Collaboration</span
+              >Bashkepunim i Ngushtë</span
             ></i
           >
           <p style="color: black">
-            We are committed to close collaboration with our clients. Building a strong and transparent relationship ensures the success of our architectural projects.
+            Jemi të përkushtuar në bashkëpunim të ngushtë me klientët tanë.
+            Krijimi i një lidhjeje të fortë dhe transparente siguron suksesin e
+            projekteve tona arkitektonike.
           </p>
         </div>
       </main>
@@ -407,10 +455,9 @@
     const link = document.querySelector("a");
     </script>
           
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
     const events = document.querySelectorAll(".event");
-    const link = document.getElementById("yourLinkId"); // You need to specify the link ID
 
     let draggedElement = null;
 
@@ -420,10 +467,14 @@
         e.dataTransfer.setData("text/plain", ""); // required for Firefox
       });
 
+      link.addEventListener("mouseenter", () => {
+        link.style.backgroundColor = "rgba(255, 255, 255, 0.2)";
       event.addEventListener("dragover", (e) => {
         e.preventDefault();
       });
 
+      link.addEventListener("mouseleave", () => {
+        link.style.backgroundColor = "transparent";
       event.addEventListener("drop", (e) => {
         e.preventDefault();
 
@@ -436,37 +487,33 @@
         }
       });
     });
-
-    link.addEventListener("mouseenter", () => {
-      link.style.backgroundColor = "rgba(255, 255, 255, 0.2)";
-    });
-
-    link.addEventListener("mouseleave", () => {
-      link.style.backgroundColor = "transparent";
-    });
   });
-</script>
+  
+     
+ 
 
+    </script>
 
     <footer>
       <div class="footer-navbar">
-        <h3>Home</h3>
-        <a href="./team.html">About us</a> <br> <br>
-        <a href="./services.html">Services</a> <br> <br>
-        <a href="./projects.html">Projects</a> <br> <br>
-        <a href="./contact.html">Contact us</a> <br> <br>
+        <h3>Shembull</h3>
+        <p><i>Home</i></p>
+        <p><i>About us</i></p>
+        <p><i>Services</i></p>
+        <p><i>Projects</i></p>
+        <p><i>Contact us</i></p>
       </div>
 
       <div class="footer-stilet">
-        <h3>Our team</h3>
-        <p><i>Modern architects</i></p>
-        <p><i>Classic architect</i></p>
-        <p><i>Renaissance architect</i></p>
-        <p><i>Mediveal architect</i></p>
+        <h3>Ekipi jone</h3>
+        <p><i>Arkitektet modern</i></p>
+        <p><i>Arkitektet klasik</i></p>
+        <p><i>Arkitektet otoman</i></p>
+        <p><i>Arkitektet japonez</i></p>
       </div>
 
       <div class="footer-kontakt">
-        <h3>Contact</h3>
+        <h3>Kontakti</h3>
 
         <address>
           <p>+383 44 123 123</p>
@@ -508,4 +555,3 @@
     </footer>
   </body>
 </html>
-
