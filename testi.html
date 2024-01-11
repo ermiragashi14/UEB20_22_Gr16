@@ -1,4 +1,3 @@
-@ -1,465 +1,558 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -89,7 +88,6 @@
                 <h2>Welcome to <span>Troweld</span></h2>
               </div>
               <p>
-                Simply dummy text of the printing and typesetting industry.
                 Simply <b>dummy</b> text of the printing and <u>typesetting</u> industry.
                 Lorem Ipsum has been the industry's standard dummy text ever
                 since the 1500s, when an unknown printer took a galley of type
@@ -289,72 +287,6 @@
     </section>
 
     <section id="testimonials" class="py-5">
-      <div class="container1">
-        <h2 class="text-center mb-5" style="color: #2c3e50; font-style: italic">
-          What Our Clients Say
-        </h2>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="testimonial text-center">
-              <img
-                src="./pics/Projekti fotot/personi1.jpg"
-                alt="Client 1"
-                class="rounded-circle mb-4 testimonial-img"
-              />
-              <blockquote class="blockquote">
-                <p class="mb-0">
-                  "Your Architectural Firm exceeded our expectations. The
-                  attention to detail and creativity in their designs truly set
-                  <br />
-                  them apart."<br />
-                </p>
-                <footer class="blockquote-footer small text-muted" id="Clients">
-                  John Doe, Satisfied Customer
-                </footer>
-              </blockquote>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="testimonial text-center">
-              <img
-                src="./pics/Projekti fotot/personi2.jpg"
-                alt="Client 2"
-                class="rounded-circle mb-4 testimonial-img"
-              />
-              <blockquote class="blockquote">
-                <p class="mb-0">
-                  "Working with Your Architectural Firm was a seamless
-                  experience. They listened to our needs and delivered
-                  exceptional results."
-                </p>
-                <footer
-                  class="blockquote-footer small text-muted"
-                  back
-                  id="Clients"
-                >
-                  Jane Smith, Happy Client
-                </footer>
-              </blockquote>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="testimonial text-center">
-              <img
-                src="./pics/Projekti fotot/personi3.jpg"
-                alt="Client 3"
-                class="rounded-circle mb-4 testimonial-img"
-              />
-              <blockquote class="blockquote">
-                <p class="mb-0">
-                  "The creativity and innovation in every design from Your
-                  Architectural Firm showcase their commitment to excellence."
-                  <br />
-                  <br />
-                </p>
-                <footer class="blockquote-footer small text-muted" id="Clients">
-                  Alan Johnson, Impressed Client
-                </footer>
-              </blockquote>
         <div class="container1">
             <h2 class="text-center mb-5" style="color: #2c3e50; font-style: italic">
                 What Our Clients Say
@@ -403,85 +335,63 @@
                     </div>
                 </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
-      const images = document.querySelectorAll("#draggable-images img");
-      let currentIndex = 0;
-    
-      function showImage(index) {
-        images.forEach((image, i) => {
-          i = i * -0.01;
-          if (i === index) {
-            image.style.transform = "translateX(0)";
-          } else {
-            image.style.transform = `translateX(${(i - index) * 100}%)`;
+       document.addEventListener("DOMContentLoaded", function () {
+    interact(".event")
+      .draggable({
+        inertia: true,
+        modifiers: [
+          interact.modifiers.restrictRect({
+            restriction: "parent",
+            endOnly: true,
+          }),
+        ],
+        autoScroll: true,
+        onmove: dragMoveListener,
+      })
+      .dropzone({
+        ondropactivate: function (event) {
+          event.target.classList.add("drop-active");
+        },
+        ondropdeactivate: function (event) {
+          event.target.classList.remove("drop-active");
+        },
+        ondrop: function (event) {
+          const draggedElement = event.relatedTarget;
+          const dropzone = event.target;
+
+          if (draggedElement !== dropzone) {
+            const temp = document.createElement("div");
+            dropzone.parentNode.insertBefore(temp, dropzone);
+            draggedElement.parentNode.insertBefore(dropzone, draggedElement);
+            temp.parentNode.insertBefore(draggedElement, temp);
+            temp.parentNode.removeChild(temp);
           }
-        });
-    
-        currentIndex = index;
-      }
-    
-      function dragMoveListener(event) {
-        const target = event.target;
-        const x = (parseFloat(target.getAttribute("data-x")) || 0) + event.dx;
-        const y = (parseFloat(target.getAttribute("data-y")) || 0) + event.dy;
-    
-        function nextImage() {
-          currentIndex = (currentIndex + 1) % images.length;
-          showImage(currentIndex);
-        }
-    
-        target.style.transform = "translate(" + x + "px, " + y + "px)";
-        target.setAttribute("data-x", x);
-        target.setAttribute("data-y", y);
-      }
-    
-      document.addEventListener("DOMContentLoaded", function () {
-        interact(".event")
-          .draggable({
-            inertia: true,
-            modifiers: [
-              interact.modifiers.restrictRect({
-                restriction: "parent",
-                endOnly: true,
-              }),
-            ],
-            autoScroll: true,
-            onmove: dragMoveListener,
-          })
-          .dropzone({
-            ondropactivate: function (event) {
-              event.target.classList.add("drop-active");
-            },
-            ondropdeactivate: function (event) {
-              event.target.classList.remove("drop-active");
-            },
-            ondrop: function (event) {
-              const draggedElement = event.relatedTarget;
-              const dropzone = event.target;
-    
-              if (draggedElement !== dropzone) {
-                const temp = document.createElement("div");
-                dropzone.parentNode.insertBefore(temp, dropzone);
-                draggedElement.parentNode.insertBefore(dropzone, draggedElement);
-                temp.parentNode.insertBefore(draggedElement, temp);
-                temp.parentNode.removeChild(temp);
-              }
-            }
-          });
-    
-        currentIndex = index;
-        showImage(currentIndex);
+        },
       });
-    </script>
-    
+
+      function dragMoveListener(event) {
+  const target = event.target;
+  const x = (parseFloat(target.getAttribute("data-x")) || 0) + event.dx;
+  const y = (parseFloat(target.getAttribute("data-y")) || 0) + event.dy;
+
+  target.style.transform = "translate(" + x + "px, " + y + "px)";
+  target.setAttribute("data-x", x);
+  target.setAttribute("data-y", y);
+
+  // Check if the drag operation has ended
+  if (event.dropzone === null) {
+    // Reset the data-x and data-y attributes
+    target.removeAttribute("data-x");
+    target.removeAttribute("data-y");
+  }
+}
+  });
+      </script>
+      
     
     
     
@@ -490,12 +400,7 @@
     
     
 
-      function prevImage() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        showImage(currentIndex);
-      }
 
-      const link = document.querySelector("a");
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -511,14 +416,10 @@
         e.dataTransfer.setData("text/plain", ""); // required for Firefox
       });
 
-      link.addEventListener("mouseenter", () => {
-        link.style.backgroundColor = "rgba(255, 255, 255, 0.2)";
       event.addEventListener("dragover", (e) => {
         e.preventDefault();
       });
 
-      link.addEventListener("mouseleave", () => {
-        link.style.backgroundColor = "transparent";
       event.addEventListener("drop", (e) => {
         e.preventDefault();
 
