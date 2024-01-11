@@ -802,9 +802,6 @@ textarea:focus {
     border-color: #3498db;
     box-shadow: 0 0 5px rgba(52, 152, 219, 0.7);
 }
-
-
-
 .team .members{
     position: relative;
     padding: 30px;
@@ -822,11 +819,18 @@ textarea:focus {
     background:#fff ;
 
 }
+.team .members .teampic img{
+    border-radius: 10px;
+    display: block;
+}
+.team .members .teampic:hover img{
+    transform: scale(0.96);
+}
 .team .members .members-info{
     padding-left: 30px;
     position:absolute ;
     left: 30%;
-    bottom: 40%;
+    bottom: 20%;
     background:#fff;
 
 
@@ -844,10 +848,10 @@ textarea:focus {
 .team .members span{
     display: block;
     font-size: 15px;
-    padding-bottom: 10px;
+    padding-bottom: 0px;
     position: relative;
     font-weight: 500;
-    background:#fff ;
+    color:black ;
 
 }
 .team .members span::after{
@@ -874,8 +878,8 @@ textarea:focus {
     align-items: center;
     justify-content: right;
     position:absolute ;
-    left: 45%;
-    bottom: 15%;
+    left: 60%;
+    bottom: 10%;
     background:#fff ;
 
 
@@ -934,7 +938,6 @@ section{
     margin-top: 20px;
 
 }
-
 .service_section .row {
     display: flex;
     justify-content: space-between; 
