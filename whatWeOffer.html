@@ -1,153 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Architectural site</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-      integrity="sha512-UOeQ+aZ6lEfs1tQi8w1sYmJ8fM1JrXt3Z9PZzYvj0zGCOCcXGSUtu9YsW3az0ZAIJ0L/YbNgNdF/ZHUTjyKOQg=="
-      crossorigin="anonymous"
-    />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architectural site</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha512-UOeQ+aZ6lEfs1tQi8w1sYmJ8fM1JrXt3Z9PZzYvj0zGCOCcXGSUtu9YsW3az0ZAIJ0L/YbNgNdF/ZHUTjyKOQg=="
+    crossorigin="anonymous"
+  />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <link rel="stylesheet" href="./mainstyle.css" />
-  </head>
-  <body>
-    <div class="navbari">
-      <nav>
-        <img src="./pics/Projekti fotot/logore3.png" class="logo" alt="" />
-        <ul>
-          <li><a href="./kodi.html">Home</a></li>
-          <li><a href="./team.html">About Us</a></li>
-          <li><a href="./services.html">Services</a></li>
-          <li><a href="./projects.html">Projects</a></li>
-          <li><a href="./contact.html">Contact Us</a></li>
-        </ul>
-      </nav>
-      <h1
-        class="thenje animate__animated animate__fadeInUp"
-        style="margin: 50px 0px 0px 50px; padding-bottom: 1vh"
-      >
-        What we offer..?
-      </h1>
-    </div>
-    <section class="service_section layout_padding">
-      <div class="container">
-        <div class="heading_container heading_center">
-          <h2>Our <span>Services</span></h2>
-        </div>
-        <div class="row" style="display: inline-flex">
-          <div class="col-sm-6 col-md-4">
-            <div class="box">
-              <div class="img-box">
-                <img src="pics/Projekti fotot/home (1).png" alt="" />
-              </div>
-              <div class="detail-box">
-                <h5>Crafting Comfort</h5>
-                <p>
-                  Crafting Distinctive, Crafting spaces that resonate with
-                  warmth, comfort, and your unique essence.
-                </p>
-              </div>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+  <link rel="stylesheet" href="./mainstyle.css" />
+  <style>
+    .box1 {
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin: 10px;
+      cursor: move;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbari">
+    <nav>
+      <img src="./pics/Projekti fotot/logore3.png" class="logo" alt="" />
+      <ul>
+        <li><a href="./kodi.html">Home</a></li>
+        <li><a href="./team.html">About Us</a></li>
+        <li><a href="./services.html">Services</a></li>
+        <li><a href="./projects.html">Projects</a></li>
+        <li><a href="./contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+    <h1
+      class="thenje animate__animated animate__fadeInUp"
+      style="margin: 50px 0px 0px 50px; padding-bottom: 1vh"
+    >
+      What we offer..?
+    </h1>
+  </div>
+  <section class="service_section layout_padding">
+    <div class="container mainbox">
+      <div class="heading_container heading_center">
+        <h2>Our <span>Services</span></h2>
+      </div>
+      <div class="row" id="box-container">
+        <div class="col-sm-6 col-md-4">
+          <div class="box1 box" draggable="true">
+            <div class="img-box">
+              <img src="pics/Projekti fotot/home (1).png" alt="" />
             </div>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <div class="box">
-              <div class="img-box">
-                <img src="pics/Projekti fotot/project-management.png" alt="" />
-              </div>
-              <div class="detail-box">
-                <h5>Elevating Homes</h5>
-                <p>
-                  Elevating Living Spaces Through Cutting-Edge Architectural
-                  Concepts and Creative Design Solutions.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <div class="box">
-              <div class="img-box">
-                <img src="pics/Projekti fotot/jewels.png" alt="" />
-              </div>
-              <div class="detail-box">
-                <h5>Timeless Elegance</h5>
-                <p>
-                  Infusing Homes with Our Signature Architectural Style, Where
-                  Sophistication Meets Comfort. Timelessness and unique.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <div class="box">
-              <div class="img-box">
-                <img src="pics/Projekti fotot/bio.png" alt="" />
-              </div>
-              <div class="detail-box">
-                <h5>Sustainable Style</h5>
-                <p>
-                  Our eco-friendly houses prioritize green living with
-                  energy-efficient designs and sustainable materials.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <div class="box">
-              <div class="img-box">
-                <img src="pics/Projekti fotot/review.png" alt="" />
-              </div>
-              <div class="detail-box">
-                <h5>Long-Term Satisfaction</h5>
-                <p>
-                  Our enduring commitment to excellence has fostered a community
-                  of delighted customers who have enjoyed our services for many
-                  years.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <div class="box">
-              <div class="img-box">
-                <img src="pics/Projekti fotot/column.png" alt="" />
-              </div>
-              <div class="detail-box">
-                <h5>Security and Stability</h5>
-                <p>
-                  Our homes offer a meticulously designed, secure, and stable
-                  environment, with advanced construction methods for your peace
-                  of mind.
-                </p>
-              </div>
+            <div class="detail-box">
+              <h5>Crafting Comfort</h5>
+              <p>
+                Crafting Distinctive, Crafting spaces that resonate with
+                warmth, comfort, and your unique essence.
+              </p>
             </div>
           </div>
         </div>
-        <div class="btn-box">
-          <a href="./kodi.html" onclick="goBack()">Back</a>
+        <div class="col-sm-6 col-md-4">
+          <div class="box1 box" draggable="true">
+            <div class="img-box">
+              <img src="pics/Projekti fotot/project-management.png" alt="" />
+            </div>
+            <div class="detail-box">
+              <h5>Elevating Homes</h5>
+              <p>
+                Elevating Living Spaces Through Cutting-Edge Architectural
+                Concepts and Creative Design Solutions.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="box1 box" draggable="true">
+            <div class="img-box">
+              <img src="pics/Projekti fotot/jewels.png" alt="" />
+            </div>
+            <div class="detail-box">
+              <h5>Timeless Elegance</h5>
+              <p>
+                Infusing Homes with Our Signature Architectural Style, Where
+                Sophistication Meets Comfort. Timelessness and unique.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="box1 box" draggable="true">
+            <div class="img-box">
+              <img src="pics/Projekti fotot/bio.png" alt="" />
+            </div>
+            <div class="detail-box">
+              <h5>Sustainable Style</h5>
+              <p>
+                Our eco-friendly houses prioritize green living with
+                energy-efficient designs and sustainable materials.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="box1 box" draggable="true">
+            <div class="img-box">
+              <img src="pics/Projekti fotot/review.png" alt="" />
+            </div>
+            <div class="detail-box">
+              <h5>Long-Term Satisfaction</h5>
+              <p>
+                Our enduring commitment to excellence has fostered a community
+                of delighted customers who have enjoyed our services for many
+                years.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="box1 box" draggable="true">
+            <div class="img-box">
+              <img src="pics/Projekti fotot/column.png" alt="" />
+            </div>
+            <div class="detail-box">
+              <h5>Security and Stability</h5>
+              <p>
+                Our homes offer a meticulously designed, secure, and stable
+                environment, with advanced construction methods for your peace
+                of mind.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-    <script>
-      function goBack() {
-        window.history.back();
+      <div class="btn-box">
+        <a href="./kodi.html" onclick="goBack()">Back</a>
+      </div>
+    </div>
+  </section>
+  <script>
+   document.addEventListener('DOMContentLoaded', (event) => {
+    let cards = document.querySelectorAll('.mainbox .box1');
+    let sourceCard;
+  
+    function handleDragStart(e) {
+      sourceCard = this;
+      e.dataTransfer.effectAllowed = 'move';
+      e.dataTransfer.setData('text/html', this.innerHTML);
+    }
+  
+    function handleDragOver(e) {
+      e.preventDefault();
+      return false;
+    }
+  
+    function handleDragEnter(e) {
+      this.classList.add('over');
+    }
+  
+    function handleDragLeave(e) {
+      this.classList.remove('over');
+    }
+  
+    function handleDrop(e) {
+      e.stopPropagation();
+      e.preventDefault();
+  
+      
+      if (sourceCard !== this) {
+        sourceCard.innerHTML = this.innerHTML;
+        this.innerHTML = e.dataTransfer.getData('text/html');
       }
-    </script>
-  </body>
+  
+      cards.forEach(function (card) {
+        card.classList.remove('over');
+      });
+  
+      return false;
+    }
+  
+
+
+    cards.forEach(function (card) {
+      card.addEventListener('dragstart', handleDragStart);
+      card.addEventListener('dragover', handleDragOver);
+      card.addEventListener('dragenter', handleDragEnter);
+      card.addEventListener('dragleave', handleDragLeave);
+      card.addEventListener('drop', handleDrop);
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+      const boxes = document.querySelectorAll('.box1');
+
+      let maxHeight = 0;
+
+      boxes.forEach(box => {
+        const boxHeight = box.offsetHeight;
+        maxHeight = Math.max(maxHeight, boxHeight);
+      });
+
+      boxes.forEach(box => {
+        box.style.height = maxHeight + 'px';
+      });
+    });
+
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+</body>
 </html>

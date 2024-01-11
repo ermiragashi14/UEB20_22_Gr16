@@ -1,112 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personalized Plan Generator</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Card Game</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
 
-        #quiz {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: 400px;
-            text-align: center;
-        }
+    #game-board {
+      display: grid;
+      grid-template-columns: repeat(9, 100px);
+      gap: 10px;
+    }
 
-        h2 {
-            margin-bottom: 20px;
-        }
+    .card {
+      width: 100px;
+      height: 100px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
 
-        .question {
-            margin-bottom: 20px;
-        }
+    .card div {
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.5s;
+    }
 
-        .choices {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .choice {
-            margin: 10px;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .choice:hover {
-            transform: scale(1.1);
-        }
-
-        button {
-            background-color: #4caf50;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        #result {
-            margin-top: 20px;
-            font-weight: bold;
-        }
-
-        #result img {
-            max-width: 100%;
-            border-radius: 8px;
-        }
-    </style>
+    .card img {
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+    }
+  </style>
 </head>
 <body>
 
-<div id="quiz">
-    <h2>Personalized Plan Generator</h2>
-
-    <div class="question" id="q1">
-        <p>What is your preferred architectural style?</p>
-        <div class="choices">
-            <div class="choice" onclick="answerQuestion('Modern')">Modern</div>
-            <div class="choice" onclick="answerQuestion('Traditional')">Traditional</div>
-        </div>
-    </div>
-
-    <div class="question" id="q2" style="display: none;">
-        <p>Which living room design do you like the most?</p>
-        <div class="choices">
-            <div class="choice" onclick="answerQuestion('Living Room A')">Living Room A</div>
-            <div class="choice" onclick="answerQuestion('Living Room B')">Living Room B</div>
-        </div>
-    </div>
-
-    <div class="question" id="q3" style="display: none;">
-        <p>What color scheme do you prefer?</p>
-        <div class="choices">
-            <div class="choice" onclick="answerQuestion('Neutral')">Neutral</div>
-            <div class="choice" onclick="answerQuestion('Colorful')">Colorful</div>
-        </div>
-    </div>
-
-    <!-- Add more questions as needed -->
-
-    <button onclick="nextQuestion()">Next Question</button>
-    <button onclick="generatePlan()" style="display: none;" id="finishButton">Finish</button>
-
-    <div id="result" style="display: none;"></div>
-</div>
+<div id="game-board"></div>
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+  const images = [
+    'image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg', 'image5.jpg', 'image6.jpg', 'image7.jpg', 'image8.jpg', 'image9.jpg',
+    // Add more image filenames as needed
+  ];
+
+  const totalPairs = images.length;
+  let flippedCards = [];
+  let matchedPairs = 0;
+  let currentPlayer = 1;
+  let player1Score = 0;
+  let player2Score = 0;
+
+  // Create the game board
+  const gameBoard = $('#game-board');
+  for (let i = 0; i < totalPairs * 2; i++) {
+    const card = $('<div class="card"><div></div></div>').appendTo(gameBoard);
+    card.on('click', () => flipCard(card));
+  }
+
+  // Shuffle the images and assign them to the cards
+  const shuffledImages = [...images, ...images].sort(() => Math.random() - 0.5);
+  $('.card').each((index, card) => {
+    $(card).find('div').append(`<img src="${shuffledImages[index]}" alt="Card">`);
+  });
+
+  function flipCard(card) {
+    if (flippedCards.length < 2 && !flippedCards.includes(card)) {
+      flippedCards.push(card);
+      card.find('div').css('transform', 'rotateY(180deg)');
+
+      if (flippedCards.length === 2) {
+        setTimeout(checkMatch, 500);
+      }
+    }
+  }
+
+  function checkMatch() {
+    const img1 = flippedCards[0].find('img').attr('src');
+    const img2 = flippedCards[1].find('img').attr('src');
+
+    if (img1 === img2) {
+      // Match found
+      flippedCards.forEach(card => card.off('click'));
+      matchedPairs++;
+
+      // Update scores
+      if (matchedPairs % 2 === 0) {
+        if (currentPlayer === 1) {
+          player1Score++;
+        } else {
+          player2Score++;
+        }
+
+        // Update scores on the right side
+        updateScores();
+      }
+
+      // Check if all pairs are matched
+      if (matchedPairs === totalPairs) {
+        alert('Game Over! Players: \nPlayer 1: ' + player1Score + '\nPlayer 2: ' + player2Score);
+      }
+    } else {
+      // No match, flip cards back
+      flippedCards.forEach(card => card.find('div').css('transform', 'rotateY(0deg)'));
+    }
+
+    flippedCards = [];
+    currentPlayer = currentPlayer === 1 ? 2 : 1;
+  }
+
+  function updateScores() {
+    $('#player1-score').text('Player 1: ' + player1Score);
+    $('#player2-score').text('Player 2: ' + player2Score);
+  }
+</script>
+
 </body>
 </html>
