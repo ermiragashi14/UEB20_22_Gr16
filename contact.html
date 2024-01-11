@@ -18,6 +18,12 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./mainstyle.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="mainstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="./contact.js"></script>
 
     <style>
       body {
@@ -242,4 +248,37 @@
       }
     </script>
   </body>
+            <div class="form-section" id="projectOption">
+                <input type="text" name="name" placeholder="Name:" >
+                <input type="tel" name="phone" placeholder="Phone: (044)-(111)-(111)" >
+                <input type="email" name="email" placeholder="Email:">
+                <input type="text" name="comment" placeholder="Comment (Optional)">
+                <button class="arb" type="submit">Submit</button>
+            </div>
+
+            <div class="form-section" id="teamOption">
+                <input type="text" name="name" placeholder="Name:" >
+                <input type="tel" name="phone" placeholder="Phone: (044)-(111)-(111)" >
+                <input type="email" name="email" placeholder="Email:" >
+                <input type="text" name="profession" placeholder="Profession:" >
+                <input type="text" name="comment" placeholder="Comment (Optional)">
+                <input type="file" name="file-upload" >
+                <button class="arb" type="submit">Submit</button>
+            </div>
+
+            <div class="form-section" id="conversationOption">
+                <form id="emailForm">
+                    
+                    <input type="text" id="name" name="name" placeholder="Name and Surname" >
+                    <input type="email" id="email" name="email" placeholder="Email Address" >
+                    <textarea id="message" name="message" placeholder="Message.." ></textarea>
+        
+                    <button type="button" class="arb" onclick="sendEmail()">Send an Email</button>
+                </form>
+            </div>
+        </form>
+    </div>
+
+   
+</body>
 </html>
