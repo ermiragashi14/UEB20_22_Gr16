@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="mainstyle.css">
+
+  <style>
+    body {
+      
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url("https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+      background-size: cover;
+    }
+
+    .container23 {
+    background-color: rgba(14, 40, 96, 0.6); 
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.893);
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+    form {
+       
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      margin-left: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+ 
+    input {
+    width: 90%;
+    padding: 8px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    }
+
+    button {
+    width: 90%;
+    padding: 10px;
+    background-color:rgba(12, 35, 83, 0.6); 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+
+    button:hover {
+    background-color: rgba(2, 38, 77); }
+
+    
+    .remember-me {
+  display: flex;
+  align-items: center; 
+  margin-bottom: 16px;
+  margin-left: 60px;
+}
+
+.remember-me label {
+  margin-top: 13px; 
+}
+
+
+.remember-me input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+
+    .error-message {
+      color: rgb(200, 28, 28);
+      margin-top: 8px;
+    }
+
+    input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      margin-right: 5px; 
+      margin-bottom: 2px;
+    }
+
+   
+  </style>
+
+</head>
+<body>
+
+    <div class="container23">
+  <form id="signInForm">
+
+    <h1 style="text-align: center;">Sign Up</h1>
+   
+    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+    <input type="number" id="age" name="age" placeholder="Enter your Age" required>
+
+    <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+
+    <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+
+    <div class="remember-me">
+      <label for="rememberMe">Remember Me </label>
+      <input type="checkbox" id="rememberMe" name="rememberMe">
+    </div>
+
+    <button type="button" onclick="handleSignIn()">Sign Up</button>
+    <div id="errorMessage" class="error-message"></div>
+  </form>
+</div>
+  <script>
+
+    function User(name, age, email) {
+      this.name = name;
+      this.age = age;
+      this.email = email;
+    }
+
+    function validateName(name) {
+      return /^[a-zA-Z\s]+$/.test(name);
+    }
+
+    function validateAge(age) {
+      return age >= 18 && age <= 99; 
+    }
+
+    function validateEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); 
+    }
+
+    function handleSignIn() {
+  
+      document.getElementById('errorMessage').innerText = '';
+
+ 
+      const name = document.getElementById('name').value;
+      const age = parseInt(document.getElementById('age').value, 10);
+      const email = document.getElementById('email').value;
+
+      try {
+      
+        if (!validateName(name)) {
+          throw new Error('Invalid name. Please use only letters and spaces.');
+        }
+
+        if (!validateAge(age)) {
+          throw new Error('Invalid age. Age should be between 18 and 99.');
+        }
+
+        if (!validateEmail(email)) {
+          throw new Error('Invalid email address.');
+        }
+
+ 
+        if (document.getElementById('password').value.length < 6) {
+          throw new Error('Password must be at least 6 characters long.');
+        }
+
+ 
+        alert('Sign-up successful!');
+
+        const user1 = new User('John Doe', 25, 'john@example.com');
+        const user2 = new User('Alice Smith', 30, 'alice@example.com');
+        const user3 = new User('Bob Johnson', 22, 'bob@example.com');
+
+        console.log(user1);
+        console.log(user2);
+        console.log(user3);
+
+ 
+        console.log('Maximum number value: ' + Number.MAX_VALUE);
+        console.log('Not a Number (NaN): ' + NaN);
+        console.log('Age to exponential format: ' + age.toExponential());
+        console.log('Age as a string: ' + age.toString());
+
+
+        const sampleString = 'This is a sample string for match and replace methods.';
+        const matchResult = sampleString.match(/sample/);
+        const replaceResult = sampleString.replace(/sample/g, 'example');
+
+        console.log('Match result: ' + matchResult);
+        console.log('Replace result: ' + replaceResult);
+
+        const currentDate = new Date();
+        console.log('Current date and time: ' + currentDate);
+
+      } catch (error) {
+ 
+        document.getElementById('errorMessage').innerText = error.message;
+      }
+    }
+  </script>
+</body>
+</html>
