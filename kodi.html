@@ -21,6 +21,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
     />
+<<<<<<< Updated upstream
     <style>
       .event {
         border: 1px solid #ccc;
@@ -28,6 +29,46 @@
         padding: 10px;
         cursor: grab;
       }
+=======
+ 
+  <!-- ... other head elements ... -->
+  <script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.11/dist/interact.min.js"></script>
+
+
+
+    <style>
+        #testimonials .testimonial {
+            cursor: grab;
+        }
+
+        #testimonials .testimonial:active {
+            cursor: grabbing;
+        }
+
+        .container1 {
+            overflow: hidden;
+        }
+
+        .row {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .testimonial {
+            margin: 0 15px;
+        }
+        .event {
+        border: 1px solid #ccc;
+        padding: 10px;
+
+        cursor: move;
+        }
+
+        .event:active {
+        opacity: 0.5;
+        }
+
+>>>>>>> Stashed changes
     </style>
   </head>
 
@@ -88,12 +129,20 @@
                 <h2>Welcome to <span>Troweld</span></h2>
               </div>
               <p>
-                Simply dummy text of the printing and typesetting industry.
+                Simply <b>dummy</b> text of the printing and <u>typesetting</u> industry.
                 Lorem Ipsum has been the industry's standard dummy text ever
                 since the 1500s, when an unknown printer took a galley of type
                 and scrambled it to make a type specimen book. It has s
               </p>
+<<<<<<< Updated upstream
               <a href="./whatWeOffer.html" target="_blank"> What we offer </a>
+=======
+              <a  target="_blank" id="eden"
+                href="file:///C:/Users/Admin/AppData/Local/Temp/Rar$EXa11600.1226/troweld-html/index.html"
+              >
+                <abbr title="more">Read More</abbr>
+              </a>
+>>>>>>> Stashed changes
             </div>
           </div>
           <div class="col-md-6">
@@ -211,7 +260,11 @@
       </main>
       <aside id="aside">
         <h2>Upcoming Events</h2>
+<<<<<<< Updated upstream
         <div class="event" draggable="true" ondragstart="drag(event)">
+=======
+        <div class="event" draggable="true" dragStart(event)>
+>>>>>>> Stashed changes
           <h3>
             <a href="events.html#architectural-workshop"
               >Architectural Workshop</a
@@ -224,7 +277,11 @@
           >
         </div>
 
+<<<<<<< Updated upstream
         <div class="event" draggable="true" ondragstart="drag(event)">
+=======
+        <div class="event" draggable="true" dragStart(event)>
+>>>>>>> Stashed changes
           <h3>
             <a href="events.html#design-excellence-seminar"
               >Design Excellence Seminar</a
@@ -237,7 +294,11 @@
           >
         </div>
 
+<<<<<<< Updated upstream
         <div class="event" draggable="true" ondragstart="drag(event)">
+=======
+        <div class="event" draggable="true"dragStart(event)>
+>>>>>>> Stashed changes
           <h3>
             <a href="events.html#sustainable-architecture-forum"
               >Sustainable Architecture Forum</a
@@ -252,7 +313,11 @@
           >
         </div>
 
+<<<<<<< Updated upstream
         <div class="event" draggable="true" ondragstart="drag(event)">
+=======
+        <div class="event" draggable="true" dragStart(event)>
+>>>>>>> Stashed changes
           <h3>
             <a href="events.html#urban-planning-conference"
               >Urban Planning Conference</a
@@ -287,117 +352,145 @@
     </section>
 
     <section id="testimonials" class="py-5">
-      <div class="container1">
-        <h2 class="text-center mb-5" style="color: #2c3e50; font-style: italic">
-          What Our Clients Say
-        </h2>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="testimonial text-center">
-              <img
-                src="./pics/Projekti fotot/personi1.jpg"
-                alt="Client 1"
-                class="rounded-circle mb-4 testimonial-img"
-              />
-              <blockquote class="blockquote">
-                <p class="mb-0">
-                  "Your Architectural Firm exceeded our expectations. The
-                  attention to detail and creativity in their designs truly set
-                  <br />
-                  them apart."<br />
-                </p>
-                <footer class="blockquote-footer small text-muted" id="Clients">
-                  John Doe, Satisfied Customer
-                </footer>
-              </blockquote>
+        <div class="container1">
+            <h2 class="text-center mb-5" style="color: #2c3e50; font-style: italic">
+                What Our Clients Say
+            </h2>
+            <div class="row" id="testimonialRow" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="col-md-4">
+                    <div class="testimonial text-center" draggable="true" ondragstart="drag(event)">
+                        <img src="./pics/Projekti fotot/personi1.jpg" alt="Client 1" class="rounded-circle mb-4 testimonial-img" />
+                        <blockquote class="blockquote">
+                            <p class="mb-0">
+                                "Your Architectural Firm exceeded our expectations. The attention to detail and creativity in
+                                their designs truly set <br /> them apart."<br />
+                            </p>
+                            <footer class="blockquote-footer small text-muted" id="Clients">
+                                John Doe, Satisfied Customer
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial text-center" draggable="true" ondragstart="drag(event)">
+                        <img src="./pics/Projekti fotot/personi2.jpg" alt="Client 2" class="rounded-circle mb-4 testimonial-img" />
+                        <blockquote class="blockquote">
+                            <p class="mb-0">
+                                "Working with Your Architectural Firm was a seamless experience. They listened to our needs and
+                                delivered exceptional results."
+                            </p>
+                            <footer class="blockquote-footer small text-muted" id="Clients">
+                                Jane Smith, Happy Client
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial text-center" draggable="true" ondragstart="drag(event)">
+                        <img src="./pics/Projekti fotot/personi3.jpg" alt="Client 3" class="rounded-circle mb-4 testimonial-img" />
+                        <blockquote class="blockquote">
+                            <p class="mb-0">
+                                "The creativity and innovation in every design from Your Architectural Firm showcase their commitment
+                                to excellence." <br /> <br />
+                            </p>
+                            <footer class="blockquote-footer small text-muted" id="Clients">
+                                Alan Johnson, Impressed Client
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="testimonial text-center">
-              <img
-                src="./pics/Projekti fotot/personi2.jpg"
-                alt="Client 2"
-                class="rounded-circle mb-4 testimonial-img"
-              />
-              <blockquote class="blockquote">
-                <p class="mb-0">
-                  "Working with Your Architectural Firm was a seamless
-                  experience. They listened to our needs and delivered
-                  exceptional results."
-                </p>
-                <footer
-                  class="blockquote-footer small text-muted"
-                  back
-                  id="Clients"
-                >
-                  Jane Smith, Happy Client
-                </footer>
-              </blockquote>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="testimonial text-center">
-              <img
-                src="./pics/Projekti fotot/personi3.jpg"
-                alt="Client 3"
-                class="rounded-circle mb-4 testimonial-img"
-              />
-              <blockquote class="blockquote">
-                <p class="mb-0">
-                  "The creativity and innovation in every design from Your
-                  Architectural Firm showcase their commitment to excellence."
-                  <br />
-                  <br />
-                </p>
-                <footer class="blockquote-footer small text-muted" id="Clients">
-                  Alan Johnson, Impressed Client
-                </footer>
-              </blockquote>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
+
+    <script>
+       document.addEventListener("DOMContentLoaded", function () {
+    interact(".event")
+      .draggable({
+        inertia: true,
+        modifiers: [
+          interact.modifiers.restrictRect({
+            restriction: "parent",
+            endOnly: true,
+          }),
+        ],
+        autoScroll: true,
+        onmove: dragMoveListener,
+      })
+      .dropzone({
+        ondropactivate: function (event) {
+          event.target.classList.add("drop-active");
+        },
+        ondropdeactivate: function (event) {
+          event.target.classList.remove("drop-active");
+        },
+        ondrop: function (event) {
+          const draggedElement = event.relatedTarget;
+          const dropzone = event.target;
+
+          if (draggedElement !== dropzone) {
+            const temp = document.createElement("div");
+            dropzone.parentNode.insertBefore(temp, dropzone);
+            draggedElement.parentNode.insertBefore(dropzone, draggedElement);
+            temp.parentNode.insertBefore(draggedElement, temp);
+            temp.parentNode.removeChild(temp);
+          }
+        },
+      });
+
+    function dragMoveListener(event) {
+      const target = event.target;
+      const x = (parseFloat(target.getAttribute("data-x")) || 0) + event.dx;
+      const y = (parseFloat(target.getAttribute("data-y")) || 0) + event.dy;
+
+      target.style.transform = "translate(" + x + "px, " + y + "px)";
+      target.setAttribute("data-x", x);
+      target.setAttribute("data-y", y);
+    }
+  });
+      </script>
+      
+    
+    
+    
+    
+    
+    
+    
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
-      const images = document.querySelectorAll("#draggable-images img");
-      let currentIndex = 0;
+      document.addEventListener("DOMContentLoaded", function () {
+    const events = document.querySelectorAll(".event");
 
-      function showImage(index) {
-        images.forEach((image, i) => {
-          i = i * -0.01;
-          if (i === index) {
-            image.style.transform = "translateX(0)";
-          } else {
-            image.style.transform = `translateX(${(i - index) * 100}%)`;
-          }
-        });
+    let draggedElement = null;
 
-        currentIndex = index;
-      }
-
-      function nextImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        showImage(currentIndex);
-      }
-
-      function prevImage() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        showImage(currentIndex);
-      }
-
-      const link = document.querySelector("a");
-
-      link.addEventListener("mouseenter", () => {
-        link.style.backgroundColor = "rgba(255, 255, 255, 0.2)";
+    events.forEach((event) => {
+      event.addEventListener("dragstart", (e) => {
+        draggedElement = e.target;
+        e.dataTransfer.setData("text/plain", ""); // required for Firefox
       });
 
-      link.addEventListener("mouseleave", () => {
-        link.style.backgroundColor = "transparent";
+      event.addEventListener("dragover", (e) => {
+        e.preventDefault();
       });
+
+      event.addEventListener("drop", (e) => {
+        e.preventDefault();
+
+        if (draggedElement !== e.target) {
+          const temp = document.createElement("div");
+          e.target.parentNode.insertBefore(temp, e.target);
+          draggedElement.parentNode.insertBefore(e.target, draggedElement);
+          temp.parentNode.insertBefore(draggedElement, temp);
+          temp.parentNode.removeChild(temp);
+        }
+      });
+    });
+  });
     </script>
 
     <footer>
