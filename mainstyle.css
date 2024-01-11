@@ -11,7 +11,6 @@
     font-weight: normal;
   }
   
-  /* Additional styles if needed */
   @font-face {
     font-family: 'eden';
     src: url('./fonti/Poppins-Italic.ttf') format('truetype');
@@ -68,7 +67,7 @@ main .new-div img {
 }
 
 .new-div {
-    flex: 1; /* Add this to make it take available space */
+    flex: 1; 
     margin-top: 1%;
     background-color: #333;
     padding: 20px;
@@ -263,7 +262,6 @@ nav a:hover {
     z-index: 1;
 }
 
-/* Thenje heading styles */
 .navbari h1.thenje {
     position: absolute;
     bottom: 20px;
@@ -333,7 +331,7 @@ nav a:hover {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 20px; /* fading effecti */
+    height: 20px;
     background: linear-gradient(to bottom, transparent, white);
     z-index: 1;
 }
@@ -355,7 +353,7 @@ nav a:hover {
     color: #ffffff;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 2px solid #fff; /* Typing cursor */
+    border-right: 2px solid #fff; 
     animation: revealText 4s steps(700) forwards, animateText 355s forwards;
     opacity: 0;
 }

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Architectural Firm</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add your custom styles -->
+    <style>
+        /* Add any additional styles specific to this page */
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Your Architectural Firm</h1>
+        <p>Transforming Visions into Architectural Masterpieces</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <main>
+            <div>
+                <img src="placeholder.jpg" alt="Architectural Image">
+                <p>Welcome to Your Architectural Firm, where creativity meets precision. We specialize in crafting
+                    architecturally stunning plans tailored to your unique vision.</p>
+            </div>
+
+            <div>
+                <h2>Our Team</h2>
+                <p>Meet our team of highly skilled architects and designers, dedicated to bringing your dreams to life with
+                    innovative and functional designs.</p>
+            </div>
+
+            <div>
+                <h2>What Sets Us Apart</h2>
+                <p>At Your Architectural Firm, we go beyond traditional architecture. Our approach combines artistic flair,
+                    cutting-edge technology, and sustainable practices to deliver exceptional results.</p>
+            </div>
+
+            <div>
+                <h2>Services</h2>
+                <div>
+                    <h3>Custom Architectural Plans</h3>
+                    <p>Our experts work closely with you to create tailor-made architectural plans that align with your
+                        lifestyle and preferences.</p>
+                </div>
+
+                <div>
+                    <h3>Interior Design Services</h3>
+                    <p>Transform your space into a harmonious blend of aesthetics and functionality with our expert interior
+                        design solutions.</p>
+                </div>
+
+                <div>
+                    <h3>Project Management</h3>
+                    <p>From concept to completion, we handle every aspect of your project with meticulous attention to detail
+                        and efficient project management.</p>
+                </div>
+            </div>
+
+            <!-- Add more services as needed -->
+        </main>
+
+        <aside>
+            <h2>Featured Projects</h2>
+            <img src="project1.jpg" alt="Project 1">
+            <p>Description of Project 1.</p>
+            <img src="project2.jpg" alt="Project 2">
+            <p>Description of Project 2.</p>
+            <!-- Add more project images and descriptions as needed -->
+        </aside>
+    </section>
+
+    <section id="architectural-images">
+        <h2>Architectural Inspirations</h2>
+        <div>
+            <img src="inspiration1.jpg" alt="Inspiration 1">
+            <img src="inspiration2.jpg" alt="Inspiration 2">
+            <!-- Add more inspirational images as needed -->
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div>
+            <blockquote>
+                <p>"Your Architectural Firm exceeded our expectations. The attention to detail and creativity in their
+                    designs truly set them apart."</p>
+                <cite>- John Doe, Satisfied Customer</cite>
+            </blockquote>
+
+            <blockquote>
+                <p>"Working with Your Architectural Firm was a seamless experience. They listened to our needs and delivered
+                    exceptional results."</p>
+                <cite>- Jane Smith, Happy Client</cite>
+            </blockquote>
+            <!-- Add more testimonials as needed -->
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Ready to embark on your architectural journey? Contact us today to discuss your project and turn your vision
+            into reality.</p>
+        <!-- Add a contact form or contact information here -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Architectural Firm | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // JavaScript for image animations (example)
+        const images = document.querySelectorAll('#architectural-images img');
+
+        images.forEach((image, index) => {
+            image.style.transition = `transform 0.5s ease-in-out ${index * 0.1}s`;
+        });
+
+        document.addEventListener('scroll', () => {
+            images.forEach((image, index) => {
+                const distanceFromTop = image.getBoundingClientRect().top;
+
+                if (distanceFromTop < window.innerHeight - 50) {
+                    image.style.transform = 'translateY(0)';
+                } else {
+                    image.style.transform = 'translateY(50px)';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
