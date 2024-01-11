@@ -421,14 +421,14 @@ footer {
     text-align: center;
 }
 
-.footer-navbar p i,
+.footer-navbar a ,
 .footer-stilet p i,
 .footer-kontakt p a {
     color: #c2dcee;
     text-decoration: none;
 }
 
-.footer-navbar p i:hover,
+.footer-navbar a:hover,
 .footer-stilet p i:hover,
 .footer-kontakt p a:hover {
     color: #5fb8f3;
