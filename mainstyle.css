@@ -1,9 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-
+@font-face {
+    font-family: 'eden';
+    src: url('./fonti/Poppins-Bold.ttf') format('truetype');
+    font-weight: bold;
+  }
+  
+  @font-face {
+    font-family: 'eden';
+    src: url('./fonti/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+  }
+  
+  /* Additional styles if needed */
+  @font-face {
+    font-family: 'eden';
+    src: url('./fonti/Poppins-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+  }
+  
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'eden', sans-serif;
     color: #fff;
     background-color: rgba(225, 232, 248, 0.6);
 }
