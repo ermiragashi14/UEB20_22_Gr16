@@ -72,38 +72,57 @@
         </label>
 
         <div class="form-section" id="projectOption">
-          <input type="text" name="name" placeholder="Name:" />
+          <input type="text" name="name" placeholder="Name:" required />
           <input
             type="tel"
             name="phone"
             placeholder="Phone: (04*)-(***)-(***)"
+            pattern="\(\d{3}\)-\(\d{3}\)-\(\d{3}\)"
+            required
             list="phoneOptions"
           />
           <datalist id="phoneOptions">
             <option value="(044)-(***)-(***)"></option>
             <option value="(045)-(***)-(***)"></option>
-            <option value="(047)-(***)-(***)"></option>
+            <option value="(049)-(***)-(***)"></option>
           </datalist>
           <input type="email" name="email" placeholder="Email:" />
-          <input type="text" name="comment" placeholder="Comment (Optional)" />
+          <input
+            type="text"
+            name="comment"
+            placeholder="Comment (Optional)"
+            required
+          />
           <button type="submit">Submit</button>
         </div>
 
         <div class="form-section" id="teamOption">
-          <input type="text" name="name" placeholder="Name:" />
+          <input type="text" name="name" placeholder="Name:" required />
           <input
             type="tel"
             name="phone"
             placeholder="Phone: (04*)-(***)-(***)"
             list="phoneOptions"
+            required
           />
           <datalist id="phoneOptions">
             <option value="(044)-(***)-(***)"></option>
             <option value="(045)-(***)-(***)"></option>
-            <option value="(047)-(***)-(***)"></option>
+            <option value="(049)-(***)-(***)"></option>
           </datalist>
-          <input type="email" name="email" placeholder="Email:" />
-          <input type="text" name="profession" placeholder="Profession:" />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email:"
+            min="0"
+            max="15"
+          />
+          <input
+            type="text"
+            name="profession"
+            placeholder="Profession:"
+            required
+          />
           <input type="text" name="comment" placeholder="Comment (Optional)" />
           <input type="file" name="file-upload" />
           <button type="submit">Submit</button>
@@ -116,17 +135,20 @@
               id="name"
               name="name"
               placeholder="Name and Surname"
+              required
             />
             <input
               type="email"
               id="email"
               name="email"
               placeholder="Email Address"
+              required
             />
             <textarea
               id="message"
               name="message"
               placeholder="Message.."
+              required
             ></textarea>
 
             <button type="button" onclick="sendEmail()">Send an Email</button>

@@ -358,6 +358,7 @@ nav a:hover {
     max-width: 100%;
     position: relative;
     z-index: 2;
+    float: left;
   }
   
   .about_section .detail-box p {
