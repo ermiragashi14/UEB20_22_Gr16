@@ -407,9 +407,10 @@
     const link = document.querySelector("a");
     </script>
           
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
     const events = document.querySelectorAll(".event");
+    const link = document.getElementById("yourLinkId"); // You need to specify the link ID
 
     let draggedElement = null;
 
@@ -419,14 +420,10 @@
         e.dataTransfer.setData("text/plain", ""); // required for Firefox
       });
 
-      link.addEventListener("mouseenter", () => {
-        link.style.backgroundColor = "rgba(255, 255, 255, 0.2)";
       event.addEventListener("dragover", (e) => {
         e.preventDefault();
       });
 
-      link.addEventListener("mouseleave", () => {
-        link.style.backgroundColor = "transparent";
       event.addEventListener("drop", (e) => {
         e.preventDefault();
 
@@ -439,8 +436,17 @@
         }
       });
     });
+
+    link.addEventListener("mouseenter", () => {
+      link.style.backgroundColor = "rgba(255, 255, 255, 0.2)";
+    });
+
+    link.addEventListener("mouseleave", () => {
+      link.style.backgroundColor = "transparent";
+    });
   });
-    </script>
+</script>
+
 
     <footer>
       <div class="footer-navbar">
