@@ -13,39 +13,71 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            
+
         }
 
         li{
-            color: black;
+            color: rgb(63, 63, 63);
+            
         }
 
         .content ul li {
             list-style-type: upper-roman;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            
+        }
+
+        .content ul li, ol li:hover{
+            color:black;
         }
 
         .content ol li {
             list-style-type: disc;
+            
         }
 
         .content {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            
         }
+
+        .description{
+            background-image: url("https://images.pexels.com/photos/950241/pexels-photo-950241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+            background-repeat:repeat-x;
+            background-attachment: fixed;
+            background-origin: content-box;
+            /* Ose mund te perdorim background-property -> background: background-color background-image background-repeat background-attachment background-position; */
+            border: #333;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10vh; 
+            text-align: center; 
+            color: #333;
+            padding: 2vh 0 2vh 0;
+        }
+
+           
+    
 
         .architecture-info {
             display: flex;
             justify-content: space-between;
             margin-top: 50px;
+            
         }
 
         .architecture-info img {
             max-width: 45%;
             border-radius: 8px;
+            
         }
 
         .architecture-description {
             max-width: 50%;
+            
         }
 
         .architecture-description h2 {
@@ -55,6 +87,7 @@
         .architecture-description p {
             line-height: 1.6;
             color: #666;
+            word-wrap: break-word;
         }
 
         .architecture-description ul {
@@ -70,27 +103,41 @@
             color: #333;
         }
 
-        .video-container {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 30px;
-            width: 45%;
+        
+
+        #audio-player {
+         
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            color: #6c6767;
+            text-align: center;
+            padding: 10px;
+            background: radial-gradient(circle,#e9effd, #e9effd);
+            
         }
 
-        .video-container iframe {
-            width: 48%;
-            height: 300px;
-        }
+        
+.video-container {
+    display: flex;
+    margin-left: 5px;
+    margin-right: 30px;
+    margin-top: 30px;
+    width: 45%;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0, 1);
+    border-image: url("https://images.pexels.com/photos/950241/pexels-photo-950241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+}
 
-        .description{
-            border: #333;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 10vh; 
-            text-align: center; 
-            color: #333;
-            padding: 2vh 0 2vh 0;
-        }
+.video-container video {
+    width: 45%; 
+    height: auto; 
+    border-radius: 20px; 
+    object-fit: cover; 
+    transition: transform 0.3s ease-in-out;
+    
+}
 
 
     </style>
@@ -122,7 +169,7 @@
                             </p>
         </div>
         <div class="architecture-info">
-            <iframe class="video-container" src="https://shuttle-storage.s3.amazonaws.com/arkshelter/system/video/135/video.webm?1648821220" frameborder="0" allowfullscreen autoplay muted></iframe>
+            <iframe class="video-container" src="projekti/pexels_videos_2314142 (2160p).mp4" frameborder="0" allowfullscreen autoplay muted></iframe>
             
             <div class="architecture-description">
                 
@@ -196,6 +243,13 @@
                 
             </div>
         </div>
+    </div>
+    <div id="audio-player">
+    
+        <audio controls loop autoplay>
+            <source src="projekti/mac-demarco-chamber-of-reflection.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
     </div>
     <footer>
         <div class="footer-navbar">
