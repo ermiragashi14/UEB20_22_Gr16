@@ -1,148 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log In</title>
-    <link rel="stylesheet" href="mainstyle.css">
-    <style>
-        body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
-    background-image: url("https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-    background-size: cover;
-    margin: 0;
-}
-
-.login-container {
-    background-color: rgba(14, 40, 96, 0.6);
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.893);
-    display: flex;
-    flex-direction: column;
-    overflow: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 20px;
-    width: 300px;
-    margin-left: 20px;
-}
-
-form {
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-}
-
-input {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin: 10px 0;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.button {
-    width: calc(100% - 20px);
-    padding: 10px;
-    background-color: rgba(12, 35, 83, 0.6);
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.button:hover {
-    background-color: rgba(2, 38, 77);
-}
-
-#error-message {
-    color: red;
-    margin-top: 10px;
-}
-
-
-       
-    </style>
+<link rel="stylesheet" href="4style.css">
+<title> CSS Login Screen Tutorial </title>
 </head>
 <body>
-    <div class="login-container">
-        <h2>Log In</h2>
-        <form id="loginForm">
-
-            <input type="text" id="username" name="username" placeholder="Enter Username" required><br>
-
-            <input type="password" id="password" name="password" placeholder="Password" required><br>
-
-            <input class="button" type="button" value="Login" onclick="validateLogin()">
+  <body>
+    <div class="login-page">
+      <div class="form">
+        <div class="login">
+          <div class="login-header">
+            <h3>LOGIN</h3>
+            <p>Please enter your credentials to login.</p>
+          </div>
+        </div>
+        <form class="login-form">
+          <input type="text" placeholder="username"/>
+          <input type="password" placeholder="password"/>
+          <button>login</button>
+          <p class="message">Not registered? <a href="#">Create an account</a></p>
         </form>
-        <p>Don't have an account <a href="/SignUp.html">Sign Up</a></p>
-        <p id="error-message"></p>
-
-        <script>
-            function validateLogin() {
-                try {
-                    var username = document.getElementById("username").value;
-                    var password = document.getElementById("password").value;
-                    var errorMessage = document.getElementById("error-message");
-
-                    var validUsername = "Andi_Gashi";
-                    var validPassword = "12345678";
-
-                    if (!username || !password) {
-                        throw "Please enter both username and password.";
-                    }
-
-                    if (username === validUsername && password === validPassword) {
-                        errorMessage.style.color = "green";
-                        errorMessage.innerHTML = "Login successful! Welcome, " + username + "!";
-
-                        var passwordStrength = calculatePasswordStrength(password);
-                        console.log("Password Strength: " + passwordStrength);
-                        console.log("Password Strength in exponential notation: " + passwordStrength.toExponential());
-                        console.log("String representation of the password strength: " + passwordStrength.toString());
-
-                        var loginTime = new Date();
-                        console.log("Login time: " + loginTime);
-                    } else {
-                        throw "Invalid username or password. Please try again.";
-                    }
-                } catch (error) {
-                    errorMessage.style.color = "red";
-                    errorMessage.innerHTML = error;
-                }
-            }
-
-            function calculatePasswordStrength(password) {
-         
-                var lengthFactor = password.length;
-                var uppercaseFactor = /[A-Z]/.test(password) ? 1 : 0;
-                var lowercaseFactor = /[a-z]/.test(password) ? 1 : 0;
-                var numberFactor = /\d/.test(password) ? 1 : 0;
-                var specialCharFactor = /[!@#$%^&*(),.?":{}|<>]/.test(password) ? 1 : 0;
-
-                var strength = lengthFactor + uppercaseFactor + lowercaseFactor + numberFactor + specialCharFactor;
-
-                console.log("Password Strength in exponential notation: " + strength.toExponential());
-                console.log("String representation of the password strength: " + strength.toString());
-
-                var maxStrength = Number.MAX_VALUE;
-                console.log("Maximum possible password strength: " + maxStrength);
-
-                var undeterminedStrength = NaN;
-                console.log("Undetermined password strength: " + undeterminedStrength);
-
-                return strength;
-            }
-        </script>
+      </div>
     </div>
 </body>
-</html>
