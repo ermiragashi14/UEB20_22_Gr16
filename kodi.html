@@ -286,6 +286,7 @@
         }
       </script>
     </section>
+    
 
     <section id="testimonials" class="py-5">
       <div class="container1">
@@ -354,54 +355,6 @@
                   Alan Johnson, Impressed Client
                 </footer>
               </blockquote>
-        <div class="container1">
-            <h2 class="text-center mb-5" style="color: #2c3e50; font-style: italic">
-                What Our Clients Say
-            </h2>
-            <div class="row" id="testimonialRow" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <div class="col-md-4">
-                    <div class="testimonial text-center" draggable="true" ondragstart="drag(event)">
-                        <img src="./pics/Projekti fotot/personi1.jpg" alt="Client 1" class="rounded-circle mb-4 testimonial-img" />
-                        <blockquote class="blockquote">
-                            <p class="mb-0">
-                                "Your Architectural Firm exceeded our expectations. The attention to detail and creativity in
-                                their designs truly set <br /> them apart."<br />
-                            </p>
-                            <footer class="blockquote-footer small text-muted" id="Clients">
-                                John Doe, Satisfied Customer
-                            </footer>
-                        </blockquote>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="testimonial text-center" draggable="true" ondragstart="drag(event)">
-                        <img src="./pics/Projekti fotot/personi2.jpg" alt="Client 2" class="rounded-circle mb-4 testimonial-img" />
-                        <blockquote class="blockquote">
-                            <p class="mb-0">
-                                "Working with Your Architectural Firm was a seamless experience. They listened to our needs and
-                                delivered exceptional results."
-                            </p>
-                            <footer class="blockquote-footer small text-muted" id="Clients">
-                                Jane Smith, Happy Client
-                            </footer>
-                        </blockquote>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="testimonial text-center" draggable="true" ondragstart="drag(event)">
-                        <img src="./pics/Projekti fotot/personi3.jpg" alt="Client 3" class="rounded-circle mb-4 testimonial-img" />
-                        <blockquote class="blockquote">
-                            <p class="mb-0">
-                                "The creativity and innovation in every design from Your Architectural Firm showcase their commitment
-                                to excellence." <br /> <br />
-                            </p>
-                            <footer class="blockquote-footer small text-muted" id="Clients">
-                                Alan Johnson, Impressed Client
-                            </footer>
-                        </blockquote>
-                    </div>
-                </div>
-            </div>
           </div>
         </div>
       </div>
@@ -481,23 +434,20 @@
       });
     </script>
     
-    
-    
-    
-    
-    
-    
-    
 
-      function prevImage() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        showImage(currentIndex);
-      }
+    <script>
+      function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }
 
-      const link = document.querySelector("a");
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    }
+    const link = document.querySelector("a");
+    </script>
+          
     <script>
       document.addEventListener("DOMContentLoaded", function () {
     const events = document.querySelectorAll(".event");
@@ -589,7 +539,6 @@
               Rr.Adem Jashari, 10000, Prishtine
             </p>
           </a>
-          <p>&copy; Elion Mehaj SH.P.K</p>
         </address>
       </div>
     </footer>
