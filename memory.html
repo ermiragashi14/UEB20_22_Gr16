@@ -188,7 +188,7 @@
         let selectedCards = [];
         let score = 0;
 
-        // Shuffle array function
+        
         function shuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
@@ -196,7 +196,6 @@
             }
         }
 
-        // Initialize game cards
         function initializeGame() {
             gameCards = [...architecturalElements, ...architecturalElements];
             shuffleArray(gameCards);
@@ -207,12 +206,10 @@
             showCountdown();
         }
 
-        // Flip all cards at the beginning
         function flipAllCards() {
             $('.card').toggleClass('flipped');
         }
 
-        // Show countdown popup
         function showCountdown() {
             const countdownPopup = $('#countdown-popup');
             const countdown = $('#countdown');
@@ -236,13 +233,10 @@
             $('html').css('overflow-y', 'hidden');
         }
 
-        // Start the game
         function startGame() {
-            // Enable card click
             $('.card').click(cardClickHandler);
         }
 
-        // Render game cards
         function renderCards() {
             const gameContainer = $('#game-container');
             gameContainer.empty();
@@ -272,66 +266,53 @@
             });
         }
 
-        // Handle card click
         function cardClickHandler() {
             const index = $(this).data('index');
 
-            // Avoid selecting more than 2 cards
             if (selectedCards.length < 2 && !selectedCards.includes(index)) {
                 selectedCards.push(index);
 
-                // Flip the selected card
                 $(this).toggleClass('flipped');
 
-                // Check if two cards are selected
                 if (selectedCards.length === 2) {
                     setTimeout(checkMatch, 800);
                 }
             }
         }
 
-        // Check if the selected cards are a match
         function checkMatch() {
             const [index1, index2] = selectedCards;
             const card1 = $('.card[data-index=' + index1 + ']');
             const card2 = $('.card[data-index=' + index2 + ']');
 
             if (gameCards[index1] === gameCards[index2]) {
-                // Match found
                 score++;
                 updateScore();
 
-                // Remove matched cards
                 card1.off('click');
                 card2.off('click');
 
-                // Check if all matches are found
                 if (score === architecturalElements.length) {
                     showGameOverPopup();
                 }
             } else {
-                // No match, flip the cards back
                 card1.toggleClass('flipped');
                 card2.toggleClass('flipped');
             }
 
-            // Clear selected cards for the next turn
             selectedCards = [];
         }
 
-        // Update the displayed score
         function updateScore() {
             $('#score-value').text(score);
         }
 
-        // Show game over popup
         function showGameOverPopup() {
             const popup = $('#popup');
             popup.show();
             $('html').css('overflow-y', 'hidden');
             popup.html(`<h2 id="game-over-message">Game Over!</h2><p>Your score: <span id="score-value">${score}</span></p><button id="restart">Restart</button>`);
 
-            // Restart game
             $('#restart').click(function () {
                 popup.hide();
                 $('html').css('overflow-y', 'scroll');
@@ -339,7 +320,6 @@
             });
         }
 
-        // Initialize the game when the page loads
         initializeGame();
     </script>
 </body>
