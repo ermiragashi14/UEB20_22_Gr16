@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Architectural Firm</title>
+    <title>Projekti UEB</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -41,7 +41,7 @@
           <li><a href="./services.html">Services</a></li>
           <li><a href="./projects.html">Projects</a></li>
           <li><a href="./contact.html">Contact Us</a></li>
-          <button class="btn btn-dark"><a style="color: lightgray;" href="./contact.html">Login</a></button>
+          <button class="btn btn-dark"><a style="color: lightgray;" href="./login.html">Login</a></button>
 
         </ul>
       </nav>
@@ -59,10 +59,10 @@
           <div class="col-md-6">
             <div class="detail-box">
               <div class="heading_container">
-                <h2 style="color: #2c3e50;">Welcome to <span>our company</span></h2>
+                <h2 style="color: black;">Welcome to <span style="color: #2c3e50;">Modern architects</span></h2>
               </div>
               <p>
-                Step into a world where creativity meets functionality, and design transforms spaces into experiences.We are passionate about crafting architectural marvels that not only stand the test of time but also resonate with your unique vision.
+                <b>We</b> believe that <u>every</u> space has a story to tell. As a pioneering architecture firm, we specialize in transforming dreams into awe-inspiring realities. Our passion for design excellence and commitment to innovation have positioned us at the forefront of the industry.
               </p>
               <a href="./whatWeOffer.html" target="_blank"> What we offer </a>
             </div>
@@ -106,7 +106,7 @@
               alt="Image 3"
             />
           </div>
-
+ 
           <a
             class="carousel-control-prev"
             href="#draggable-images"
@@ -126,54 +126,55 @@
             <span class="sr-only">Next</span>
           </a>
         </div>
-
+ 
         <div class="new-div">
           <i style="color: black" class="fa fa-building">
             <span style="font-weight: bold; font-family: 'Poppins'"
-              >Architectural projects</span
+              >Expertise</span
             ></i
           >
           <p style="color: black">
-            Our collaboration with clients begins with a clear vision: to provide extraordinary architectural projects for various structures, ranging from private residences to public buildings.
+            Our team of seasoned architects brings a wealth of experience to the table. From conceptualization to construction, we are dedicated to delivering projects that not only meet but exceed expectations. Whether it's residential, commercial, or institutional architecture, our expertise spans a diverse range of design challenges.
           </p>
         </div>
-
-        <div class="new-div">
-          <i style="color: black" class="fa fa-wrench">
-            <span style="font-weight: bold; font-family: 'Poppins'"
-              >Design and Planning</span
-            ></i
-          >
-          <p style="color: black">
-            We offer comprehensive architectural design and planning services. Our qualified and dedicated team ensures the realization of projects with an innovative and professional approach.
-          </p>
-        </div>
-
-        <div class="new-div">
-          <i style="color: black" class="fa fa-paint-brush">
-            <span style="font-weight: bold; font-family: 'Poppins'"
-              >Unique design</span
-            ></i
-          >
-          <p style="color: black">
-            Every project we create includes a unique and personalized design. We are dedicated to every detail, ensuring that each structure reflects the identity and needs of the client.
-          </p>
-        </div>
-
+ 
         <div class="new-div">
           <i style="color: black" class="fa fa-handshake-o">
             <span style="font-weight: bold; font-family: 'Poppins'"
-              >Tight Collaboration</span
+              >Client-Centric Approach</span
             ></i
           >
           <p style="color: black">
-            We are committed to close collaboration with our clients. Building a strong and transparent relationship ensures the success of our architectural projects.
+            Collaboration is at the heart of what we do. We work closely with our clients to understand their vision, preferences, and aspirations. This client-centric approach allows us to tailor our designs to reflect the unique personality of each project.
+          </p>
+        </div>
+ 
+        <div class="new-div">
+          <i style="color: black" class="fa fa-paint-brush">
+            <span style="font-weight: bold; font-family: 'Poppins'"
+              >Committed to Crafting Unique Styles:</span
+            ></i
+          >
+          <p style="color: black">
+            Our architectural approach seamlessly blends innovation with timeless aesthetics. Each project is a meticulously curated masterpiece, reflecting our dedication to distinctive style and unparalleled craftsmanship.
+          </p>
+        </div>
+ 
+        <div class="new-div">
+          <i style="color: black" class="fa fa-wrench">
+            <span style="font-weight: bold; font-family: 'Poppins'"
+              >Commitment to Quality</span
+            ></i
+          >
+          <p style="color: black">
+            Quality is non-negotiable. From the selection of materials to the execution of construction, we adhere to the highest standards. Our meticulous attention to detail ensures that every project is a masterpiece in its own right.
+ 
           </p>
         </div>
       </main>
       <aside id="aside">
         <h2>Upcoming Events</h2>
-        <div class="event" draggable="true" ondragstart="drag(event)">
+        <div class="event">
           <h3>
             <a href="events.html#architectural-workshop"
               >Architectural Workshop</a
@@ -186,7 +187,7 @@
           >
         </div>
 
-        <div class="event" draggable="true" ondragstart="drag(event)">
+        <div class="event">
           <h3>
             <a href="events.html#design-excellence-seminar"
               >Design Excellence Seminar</a
@@ -199,7 +200,7 @@
           >
         </div>
 
-        <div class="event" draggable="true" ondragstart="drag(event)">
+        <div class="event">
           <h3>
             <a href="events.html#sustainable-architecture-forum"
               >Sustainable Architecture Forum</a
@@ -214,7 +215,7 @@
           >
         </div>
 
-        <div class="event" draggable="true" ondragstart="drag(event)">
+        <div class="event">
           <h3>
             <a href="events.html#urban-planning-conference"
               >Urban Planning Conference</a
@@ -228,7 +229,7 @@
         </div>
       </aside>
 
-      <script>
+      <!-- <script>
         function allowDrop(event) {
           event.preventDefault();
         }
@@ -245,7 +246,7 @@
           event.target.parentNode.replaceChild(draggedElement, event.target);
           event.target.parentNode.insertBefore(event.target, draggedElement);
         }
-      </script>
+      </script> -->
     </section>
     
 
