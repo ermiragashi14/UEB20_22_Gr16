@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architectural Memory Game</title>
+    <link rel="stylesheet" href="mainstyle.css">
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  />
+    <style>
+        /* body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url('background.jpg'); /* Replace 'background.jpg' with your image */
+            /* background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            color: #fff;
+        } */ 
+        .navbari {
+            height: 45vh;
+        }
+        h1 {
+            text-align: center;
+            color: #3498db;
+            font-size: 36px;
+        }
+
+        #countdown-popup {
+            display: none;
+            position: fixed;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        #game-container {
+            text-align: center;
+            position: relative;
+        }
+
+        .card-container {
+            display: inline-block;
+            margin: 10px;
+            perspective: 1000px;
+        }
+
+        .card {
+            width: 120px;
+            height: 160px;
+            border: 5px solid #3498db;
+            margin: 10px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: #fff;
+            font-size: 20px;
+            line-height: 160px;
+            user-select: none;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+            position: relative;
+            border-radius: 10px;
+        }
+
+        .card .face {
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            position: absolute;
+            border-radius: 10px;
+        }
+
+        .card .front {
+            position: absolute;
+            z-index: 2;
+            transform: rotateY(180deg);
+            background-color: #2ecc71;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card .back {
+            transform: rotateY(0deg);
+            background-color: #e74c3c;
+            border-radius: 10px;
+        }
+
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        #popup h2 {
+            color: #3498db;
+        }
+
+        #popup p {
+            color: #333;
+        }
+
+        #score-value {
+            color: #3498db;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        #restart {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbari">
+        <nav>
+          <img src="./pics/Projekti fotot/logore3.png" class="logo" alt="" />
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./team.html">About Us</a></li>
+            <li><a href="./services.html">Services</a></li>
+            <li><a href="./projects.html">Projects</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
+            <button class="btn btn-dark"><a style="color: lightgray;" href="./login.html">Login</a></button>
+  
+          </ul>
+        </nav>
+        <h1
+          class="thenje animate__animated animate__fadeInUp"
+          style="margin: 50px 0px 0px 50px; padding-bottom: 1vh"
+        >
+         Memory card game
+        </h1>
+      </div>
+
+    <div id="countdown-popup">
+        <h2 id="countdown" style="color: #3498db; font-size: 36px;"></h2>
+        <p>Get ready!</p>
+    </div>
+
+    <div id="game-container"></div>
+
+    <div id="popup">
+        <h2 id="game-over-message">Game Over!</h2>
+        <p>Your score: <span id="score-value">0</span></p>
+        <button id="restart">Restart</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        const architecturalElements = ['Column', 'Arch', 'Window', 'Door', 'Roof', 'Stairs', 'Balcony', 'Facade'];
+        let gameCards = [];
+        let selectedCards = [];
+        let score = 0;
+
+        // Shuffle array function
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        // Initialize game cards
+        function initializeGame() {
+            gameCards = [...architecturalElements, ...architecturalElements];
+            shuffleArray(gameCards);
+            renderCards();
+            score = 0;
+            updateScore();
+            flipAllCards();
+            showCountdown();
+        }
+
+        // Flip all cards at the beginning
+        function flipAllCards() {
+            $('.card').toggleClass('flipped');
+        }
+
+        // Show countdown popup
+        function showCountdown() {
+            const countdownPopup = $('#countdown-popup');
+            const countdown = $('#countdown');
+            let seconds = 10;
+
+            countdownPopup.show();
+
+            const countdownInterval = setInterval(() => {
+                countdown.text(seconds);
+                seconds--;
+
+                if (seconds < 0) {
+                    clearInterval(countdownInterval);
+                    countdownPopup.hide();
+                    $('html').css('overflow-y', 'scroll');
+                    flipAllCards();
+                    setTimeout(() => startGame(), 800);
+                }
+            }, 1000);
+
+            $('html').css('overflow-y', 'hidden');
+        }
+
+        // Start the game
+        function startGame() {
+            // Enable card click
+            $('.card').click(cardClickHandler);
+        }
+
+        // Render game cards
+        function renderCards() {
+            const gameContainer = $('#game-container');
+            gameContainer.empty();
+            gameCards.forEach((element, index) => {
+                const cardContainer = $('<div>', {
+                    class: 'card-container'
+                });
+
+                const card = $('<div>', {
+                    class: 'card',
+                    'data-index': index
+                });
+
+                const cardFront = $('<div>', {
+                    class: 'face front',
+                    text: element
+                });
+
+                const cardBack = $('<div>', {
+                    class: 'face back'
+                });
+
+                card.append(cardFront, cardBack);
+
+                cardContainer.append(card);
+                gameContainer.append(cardContainer);
+            });
+        }
+
+        // Handle card click
+        function cardClickHandler() {
+            const index = $(this).data('index');
+
+            // Avoid selecting more than 2 cards
+            if (selectedCards.length < 2 && !selectedCards.includes(index)) {
+                selectedCards.push(index);
+
+                // Flip the selected card
+                $(this).toggleClass('flipped');
+
+                // Check if two cards are selected
+                if (selectedCards.length === 2) {
+                    setTimeout(checkMatch, 800);
+                }
+            }
+        }
+
+        // Check if the selected cards are a match
+        function checkMatch() {
+            const [index1, index2] = selectedCards;
+            const card1 = $('.card[data-index=' + index1 + ']');
+            const card2 = $('.card[data-index=' + index2 + ']');
+
+            if (gameCards[index1] === gameCards[index2]) {
+                // Match found
+                score++;
+                updateScore();
+
+                // Remove matched cards
+                card1.off('click');
+                card2.off('click');
+
+                // Check if all matches are found
+                if (score === architecturalElements.length) {
+                    showGameOverPopup();
+                }
+            } else {
+                // No match, flip the cards back
+                card1.toggleClass('flipped');
+                card2.toggleClass('flipped');
+            }
+
+            // Clear selected cards for the next turn
+            selectedCards = [];
+        }
+
+        // Update the displayed score
+        function updateScore() {
+            $('#score-value').text(score);
+        }
+
+        // Show game over popup
+        function showGameOverPopup() {
+            const popup = $('#popup');
+            popup.show();
+            $('html').css('overflow-y', 'hidden');
+            popup.html(`<h2 id="game-over-message">Game Over!</h2><p>Your score: <span id="score-value">${score}</span></p><button id="restart">Restart</button>`);
+
+            // Restart game
+            $('#restart').click(function () {
+                popup.hide();
+                $('html').css('overflow-y', 'scroll');
+                initializeGame();
+            });
+        }
+
+        // Initialize the game when the page loads
+        initializeGame();
+    </script>
+</body>
+</html>
